@@ -1,0 +1,32 @@
+<!DOCTYPE>
+<html>
+  <body>
+  <center>
+  <br>
+  <br>
+  <br>
+  <form action="https://api.particle.io/v1/devices/2b0025001847343338333633/playsound?access_token=ab607270c8d04a170a0d098d0f2168a28e692500" method="POST">
+    Tell your device what to do!<br>
+    <br>
+    <select name="arg">
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+      <option value="6">6</option>
+      <option value="7">7</option>
+      <option value="8">8</option>
+      <option value="9">9</option>
+      <option value="10">10</option>
+    </select>
+    <input type="submit" value="Play sound!">
+  </form>
+  <br>
+  <form action="https://api.particle.io/v1/devices/2b0025001847343338333633/stopsound?access_token=ab607270c8d04a170a0d098d0f2168a28e692500" method="POST">
+    <input type="hidden" name="args" value="stop">
+    <input type="submit" value="Stop sound!">
+  </form>
+  </center>
+  </body>
+</html>
