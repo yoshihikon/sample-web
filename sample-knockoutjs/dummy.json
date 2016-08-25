@@ -1,0 +1,26 @@
+{
+  "userName":"Fujitsu Taro1",
+  "company":"Fujitsu",
+  "people": [
+    {
+      "id": "0001",
+      "name": "Nishida",
+      "age": 30,
+      "url": "http://www.fujitsu.com/jp/"
+    },
+    {
+      "id": "0002",
+      "name": "Takeuchi",
+      "age": 20,
+      "url": "http://www.fujitsu.com/jp/"
+    },
+    {
+      "id": "0003",
+      "name": "Hata",
+      "age": 10,
+      "url": "http://www.fujitsu.com/jp/"
+    }
+  ],
+  "currentPeopleId":"0002",
+  "doSubmit":""
+}

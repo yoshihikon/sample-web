@@ -1,0 +1,141 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Cache-Control" content="no-cache" />
+<meta http-equiv="Expires" content="Thu, 01 Dec 1994 16:00:00 GMT" />
+
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<meta name="robots" content="ALL" />
+<meta name="copyright" content="（サイト名）" />
+
+<title>jp Layout System</title>
+
+<link href="./css/styles.css" rel="stylesheet" type="text/css" />
+<link href="./css/init.css" rel="stylesheet" type="text/css" />
+
+<script src="./jquery/jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="./jqlayout/jqlayout.js" type="text/javascript"></script>
+
+</head>
+
+<body id="body">
+
+<div id="header">
+  <p>header</p>
+</div>
+
+<div id="contents">
+  <div id="block1">
+    <p>block1</p>
+  </div>
+  <div id="block2">
+    <div id="block4">
+      <p>block4</p>
+    </div>
+    <div id="block5">
+      <p>block5</p>
+    </div>
+  </div>
+  <div id="block3">
+    <p>block3</p>
+  </div>
+</div>
+
+<div id="footer">
+  <p>footer</p>
+</div>
+
+<script type="text/javascript">
+//run
+$(document).ready(function() {
+	var layoutDefinition = {
+			"container":"body",
+			"orientation":Jqlayout.VERTICAL,
+			"contents":[
+			           {
+									"id":"#header",
+									"width":200,
+									"height":100,
+									"flex":"false",
+									"weight":1
+								},
+								{
+									"id":"#contents",
+									"width":200,
+									"height":300,
+									"flex":"true",
+									"weight":1,
+									"layout":{
+														"orientation":Jqlayout.HORIZONTAL,
+														"contents":[
+																			{
+																				"id":"#block1",
+																				"width":200,
+																				"height":100,
+																				"flex":"false",
+																				"weight":1
+																			},
+																			{
+																				"id":"#block2",
+																				"width":200,
+																				"height":100,
+																				"flex":"true",
+																				"weight":1,
+																				"layout":{
+                                                  "orientation":Jqlayout.VERTICAL,
+                                                  "contents":[
+                                                            {
+                                                              "id":"#block4",
+                                                              "width":200,
+                                                              "height":50,
+                                                              "flex":"true",
+                                                              "weight":1
+                                                            },
+                                                            {
+                                                              "id":"#block5",
+                                                              "width":200,
+                                                              "height":50,
+                                                              "flex":"false",
+                                                              "weight":1
+                                                            }
+                                                            ]
+                                                }
+                                      },
+																			{
+																				"id":"#block3",
+																				"width":200,
+																				"height":100,
+																				"flex":"false",
+																				"weight":1
+																			},
+																		]
+													}
+								},
+								{
+									"id":"#footer",
+									"width":200,
+									"height":100,
+									"flex":"false",
+									"weight":1
+								}
+							]
+	};
+
+	var jql = new Jqlayout(layoutDefinition);
+	
+	$(window).resize(function(){
+	  //jql.resize();
+	});
+	
+	setInterval(function(){jql.resize()}, 500);
+});
+</script>
+
+</body>
+</html>
+

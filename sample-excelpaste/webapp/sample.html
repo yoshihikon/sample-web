@@ -1,0 +1,143 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta http-equiv="Pragma" content="no-cache" />
+	<meta http-equiv="Cache-Control" content="no-cache" />
+	<meta http-equiv="Expires" content="Thu, 01 Dec 1994 16:00:00 GMT" />
+
+	<title>Sample Excel Paste</title>
+	
+	<!--jQuery-->
+	<script src="../common/js/jquery/jquery-1.6.3.min.js" language="javascript" type="text/javascript" ></script>
+	
+	<style>
+
+#pasteTableArea{
+	margin: 12px;
+}
+
+#inputArea{
+}
+#togglePaste{
+	
+}
+#pasteTextArea{
+	display: none;
+}
+#pasteText{
+	width: 400px;
+	height: 200px;
+}
+
+	</style>
+	
+</head>
+
+<body>
+
+<h1>Sample</h1>
+<div id="pasteTableArea">
+	<div id="inputArea">
+		<table border="1">
+			<tr>
+				<th>&nbsp;</th>
+				<th>AAA</th>
+				<th>BBB</th>
+				<th>CCC</th>
+				<th>DDD</th>
+				<th>EEE</th>
+			</tr>
+			<tr>
+				<th>aaa</th>
+				<td><input type="text" id="value0_0" name="value0_0" class="textInput" /></td>
+				<td><input type="text" id="value0_1" name="value0_1" class="textInput" /></td>
+				<td><input type="text" id="value0_2" name="value0_2" class="textInput" /></td>
+				<td><input type="text" id="value0_3" name="value0_3" class="textInput" /></td>
+				<td><input type="text" id="value0_4" name="value0_4" class="textInput" /></td>
+			</tr>
+			<tr>
+				<th>bbb</th>
+				<td><input type="text" id="value1_0" name="value1_0" class="textInput" /></td>
+				<td><input type="text" id="value1_1" name="value1_1" class="textInput" /></td>
+				<td><input type="text" id="value1_2" name="value1_2" class="textInput" /></td>
+				<td><input type="text" id="value1_3" name="value1_3" class="textInput" /></td>
+				<td><input type="text" id="value1_4" name="value1_4" class="textInput" /></td>
+			</tr>
+			<tr>
+				<th>ccc</th>
+				<td><input type="text" id="value2_0" name="value2_0" class="textInput" /></td>
+				<td><input type="text" id="value2_1" name="value2_1" class="textInput" /></td>
+				<td><input type="text" id="value2_2" name="value2_2" class="textInput" /></td>
+				<td><input type="text" id="value2_3" name="value2_3" class="textInput" /></td>
+				<td><input type="text" id="value2_4" name="value2_4" class="textInput" /></td>
+			</tr>
+			<tr>
+				<th>ddd</th>
+				<td><input type="text" id="value3_0" name="value3_0" class="textInput" /></td>
+				<td><input type="text" id="value3_1" name="value3_1" class="textInput" /></td>
+				<td><input type="text" id="value3_2" name="value3_2" class="textInput" /></td>
+				<td><input type="text" id="value3_3" name="value3_3" class="textInput" /></td>
+				<td><input type="text" id="value3_4" name="value3_4" class="textInput" /></td>
+			</tr>
+			<tr>
+				<th>eee</th>
+				<td><input type="text" id="value4_0" name="value4_0" class="textInput" /></td>
+				<td><input type="text" id="value4_1" name="value4_1" class="textInput" /></td>
+				<td><input type="text" id="value4_2" name="value4_2" class="textInput" /></td>
+				<td><input type="text" id="value4_3" name="value4_3" class="textInput" /></td>
+				<td><input type="text" id="value4_4" name="value4_4" class="textInput" /></td>
+			</tr>
+		</table>
+	</div>
+	
+	<div id="togglePaste">
+		<a href="#" id="openPasteTextArea">Excelからデータをコピーする</a>
+	</div>
+		
+	<div id="pasteTextArea">
+		<textarea id="pasteText" name"pasteText"></textarea>
+		<div><input type="button" id="pasteButton" value="表にデータをコピー" /></div>
+	</div>
+</div>
+	
+<!--
+000000	000000	000000	000000	000000	xxxxxx
+11111	11111	11111	11111	111111	xxxxxx
+22222	22222	22222	22222	222222	xxxxxx
+33333	33333	33333	33333	333333	xxxxxx
+44444	44444	44444	44444	444444	xxxxxx
+xxxxx	xxxxx	xxxxx	xxxxx	xxxxx	xxxxxx
+-->
+	
+<script language="javascript" type="text/javascript">
+$(function(){
+	$("#openPasteTextArea").click(clickOpenPasteArea);
+	$("#pasteButton").click(clickPasteButton);
+});
+function clickOpenPasteArea(){
+	$("#pasteTextArea").toggle();
+}
+
+function clickPasteButton(){
+	var pasteText = $("#pasteText").val();
+	var lines = pasteText.split("\n");
+	
+	var lineLength = lines.length;
+	for(var i = 0; i < lineLength; i++){
+		var values = lines[i].split("\t");
+		var valueLength = values.length;
+		for(var j = 0; j < valueLength; j++){
+			var targetInput = "#value" + i + "_" + j;
+			if($(targetInput) != null){
+				$(targetInput).val(values[j]);
+			}
+		}
+	}
+}
+
+</script>
+
+</body>
+</html>
+

@@ -1,0 +1,36 @@
+@charset "utf-8";
+/* ------------------------------------------------------------
+  font-family
+------------------------------------------------------------ */
+@font-face {
+  font-family: "Fujitsu Sans";
+  src: url('../font/eot/FujitsuSansRegular.eot'), url('../font/FujitsuSansRegular.ttf') format('truetype');
+}
+@font-face {
+  font-family: "Fujitsu Sans Bold";
+  src: url('../font/eot/FujitsuSansBold.eot'), url('../font/FujitsuSansBold.ttf') format('truetype');
+}
+@font-face {
+  font-family: "Fujitsu Sans Medium";
+  src: url('../font/eot/FujitsuSansMedium.eot'), url('../font/FujitsuSansMedium.ttf') format('truetype');
+}
+@font-face {
+  font-family: "Fujitsu Sans Light";
+  src: url('../font/eot/FujitsuSansLight.eot'), url('../font/FujitsuSansLight.ttf') format('truetype');
+}
+/* ------------------------------
+ style
+------------------------------ */
+
+.font-regular{
+  font-family: "Fujitsu Sans";
+}
+.font-bold{
+  font-family: "Fujitsu Sans Bold";
+}
+.font-medium{
+  font-family: "Fujitsu Sans Medium";
+}
+.font-light{
+  font-family: "Fujitsu Sans Light";
+}

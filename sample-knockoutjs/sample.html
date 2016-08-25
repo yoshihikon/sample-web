@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Cache-Control" content="no-cache" />
+<meta http-equiv="Expires" content="Thu, 01 Dec 1994 16:00:00 GMT" />
+<title>knockout.js sample</title>
+
+<!--jQuery-->
+<script src="./lib/jquery-1.11.3.min.js" type="text/javascript"></script>
+
+<!--knockout.js-->
+<script src="./lib/knockout-3.4.0.js" type="text/javascript"></script>
+
+<script src="./sample.js" type="text/javascript"></script>
+
+<style>
+.current{
+  list-style-type: circle;
+  font-weight: bold;
+  color: #FF0000;
+}
+</style>
+  
+</head>
+
+<body>
+<h1>knockout.js sample</<h1>
+<h2>シンプルなバインド<h2>
+<p data-bind="text: userName">userName</p>
+
+<h2>コメントアウトによるバインド<h2>
+<p><!-- ko text: company -->company<!--/ko--></p>
+
+<h2>配列要素のバインド<h2>
+<h3>テーブル</h3>
+<table border="1">
+    <thead>
+        <tr><th>Name</th><th>Age</th></tr>
+    </thead>
+    <tbody data-bind="foreach: people">
+        <tr>
+            <td data-bind="text: name"></td>
+            <td data-bind="text: age"></td>
+        </tr>
+    </tbody>
+</table>
+
+<h3>リスト</h3>
+<ul data-bind="foreach: people">
+  <li><a data-bind="attr: { href: url }"><!-- ko text: name-->name<!--/ko--></a></li>
+</ul>
+
+<h2>条件設定<h2>  
+<h3>リスト</h3>
+<ul data-bind="foreach: people">
+  <li data-bind="css:{'current': id == $parent.currentPeopleId}"><!-- ko text: name -->name<!--/ko--></li>
+</ul>
+
+<input type="button" data-bind="click: doSubmit" value="text" />
+
+</body>
+</html>

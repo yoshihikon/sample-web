@@ -1,0 +1,23 @@
+@charset "utf-8";
+/* ------------------------------------------------------------
+ common style
+------------------------------------------------------------ */
+
+#header{
+}
+
+#contents{
+  background-color: #ff00ff;
+}
+#block1{
+  background-color: #ff0000;
+}
+#block2{
+ background-color: #00ff00;
+}
+#block3{
+  background-color: #0000ff;
+}
+#footer{
+  background-color: #ffff00;
+}
