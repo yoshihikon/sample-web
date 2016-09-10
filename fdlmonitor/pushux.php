@@ -8,8 +8,8 @@ $currentDate = date('Y-m-d');
 $currentTime = date('H:i:s');
 $currentDatetime = date('Y-m-d H:i:s');
 
-$dataDirectoryPath = '/home/sites/heteml/users/y/o/s/yoshihiko/web/goodmix/fdle/data/';
-$dataDirectoryURL = 'http://goodmix.net/fdle/data/';
+$dataDirectoryPath = '/home/sites/heteml/users/y/o/s/yoshihiko/web/designergo/fdlmonitor/data/';
+$dataDirectoryURL = 'http://designergo.net/fdlmonitor/data/';
 $nowStatusFileName = 'now.txt';
 $dailyStatusFileName = $currentDate.'.txt';
 
@@ -37,6 +37,11 @@ if (isset($_GET['app'])) {
   $app = $_GET['app'];
 }else{
   $app = none;
+}
+
+$getArray = array();
+foreach ($_GET as $key => $val){
+  $getArray[$key] = $val;
 }
 
 if($errorCode > 0){
@@ -72,12 +77,16 @@ if($result == 0){
 }
 
 //write now file
-$nowData = array('date' => $currentDate, 'time' => $currentTime, 'id' => $id, 'status' => $status, 'app' => $app);
+$nowData = array('date' => $currentDate, 'time' => $currentTime);
+$nowData = array_merge($nowData, $getArray);
+  
 $writeData = json_encode($nowData);
 file_put_contents($nowStatusFilePath, $writeData, LOCK_EX);
 
 //create daily file
-$currentTimeObject = array('time' => $currentTime, 'id' => $id, 'status' => $status, 'app' => $app);
+$currentTimeObject = array('time' => $currentTime);
+$currentTimeObject = array_merge($currentTimeObject, $getArray);
+
 $result = createFile($dailyStatusFilePath, 0666);
 if($result == 0){
   exit('Error: cannot daily file');
