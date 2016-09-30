@@ -58,6 +58,7 @@ h3,
 h4,
 h5,
 h6 {
+  line-height: 1;
   font-weight: 300;
   font-size: 1.5rem;
 }
@@ -331,39 +332,61 @@ main.moui-top .moui-module h3 {
   font-size: 2rem;
 }
 main.moui-top .moui-module .moui-contents {
-  background-color: #ffffff;
   background-color: #e1ebf2;
   padding: 10px;
 }
 main.moui-top .moui-module:last-child {
   margin-bottom: 0;
 }
-main.moui-top .moui-notice {
+main.moui-top .moui-transportation {
   order: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+}
+main.moui-top .moui-transportation .moui-center {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  border-radius: 3px;
+  background-color: #e1ebf2;
+}
+main.moui-top .moui-transportation h3 {
+  display: inline-block;
+  margin-right: 20px;
+  margin-bottom: 0;
+  background-image: url('../images/icon/train.svg');
+  background-position: 8px center;
+  background-size: 18px;
+}
+main.moui-top .moui-notice {
+  order: 2;
 }
 main.moui-top .moui-notice h3 {
   background-image: url('../images/icon/warning-selected.svg');
 }
 main.moui-top .moui-minicalendar {
-  order: 2;
+  order: 3;
 }
 main.moui-top .moui-minicalendar h3 {
   background-image: url('../images/icon/checkmark.svg');
 }
 main.moui-top .moui-workovertime {
-  order: 3;
+  order: 4;
 }
 main.moui-top .moui-workovertime h3 {
   background-image: url('../images/icon/clock.svg');
 }
 main.moui-top .moui-application {
-  order: 4;
+  order: 5;
 }
 main.moui-top .moui-application h3 {
   background-image: url('../images/icon/archive.svg');
 }
 main.moui-top .moui-approval {
-  order: 5;
+  order: 6;
 }
 main.moui-top .moui-approval h3 {
   background-image: url('../images/icon/inbox.svg');
