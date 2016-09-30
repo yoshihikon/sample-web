@@ -17,26 +17,30 @@
 @boxsize-touch-medium: 48px;
 @boxsize-touch-small: 36px;
 
+/* フォント */
 @font-size-large: 2.0rem;
 @font-size-medium: 1.5rem;
 @font-size-small: 1.35rem;
 @font-size-xsmall: 1.2rem;
 
-@font-size-schedule-meduim: 1.2rem;
-@font-size-schedule-small: 1.0rem;
+@font-family: "Hiragino Kaku Gothic ProN","メイリオ", sans-serif;
 
 /* 配色 */
 @color-bg-default: #ffffff;
+@color-border-default: #b7babd;
+
 @color-text-default: #222222;
 @color-text-link: #0088cc;
 @color-text-hover: #00aaff;
+
+
 
 /* 装飾 */
 @radius: 3px;
 @box-shadow: 0 1px 3px 1px rgba(0,0,0,0.2);
 
 /******************************
- * フォント
+ * Webフォント
 ******************************/
 @font-face {
   font-family: "Fujitsu Sans";
@@ -68,12 +72,12 @@ html{
   font-size: 62.5%;
 }
 body{
-  min-width: 800px;
+  min-width: 900px;
   height: 100%;
   background-color: @color-bg-default;
   line-height: 1;
   font-size: @font-size-medium;
-  font-family: "Hiragino Kaku Gothic ProN","メイリオ", sans-serif;
+  font-family: @font-family;
   font-weight: 300;
   color: @color-text-default;
   -webkit-text-size-adjust: 100%;
@@ -130,6 +134,19 @@ textarea{
 
 /* 検索ボックス */
 input[type=search]{
+  display: block;
+  width: 100%;
+  padding: @margin-small @margin-small @margin-small 32px;
+  -webkit-appearance: none;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  border: 1px solid @color-border-default;
+  background-image: url('../images/icon/search.svg');
+  background-repeat: no-repeat;
+  background-position: 5px center;
+  background-size: 18px;
+  font-family: @font-family;
+  font-size: @font-size-medium;
 }
 
 /* セレクトボックス */
@@ -157,7 +174,7 @@ select{
 }
 
 /******************************
- * 共通レイアウト
+ * PCレイアウト
 ******************************/
 body{
   display: flex;
@@ -167,9 +184,16 @@ body{
   min-height: 90px;
   z-index: 1001;
 }
-.moui-contents-wrapper{
-  flex-grow: 1;
+.moui-maincontents-wrapper{
+  display: flex;
+  flex-direction: row;
   z-index: 1000;
+  
+  .moui-servicemenu{
+  }
+  .moui-maincontents{
+    flex-grow: 1;
+  }
 }
 
 /******************************
@@ -186,10 +210,8 @@ body{
   align-items: flex-end;
   padding: @margin-medium @margin-large;
   
-  /*border-bottom: 3px solid #4b6980;*/
-  
   .moui-systemtitle{
-    flex-grow: 3;
+    flex-grow: 1;
     margin-bottom: 1px;
     
     h1{
@@ -199,49 +221,54 @@ body{
       color: #4c7799;
     }
   }
-  
-  .moui-subinformation{
+  .moui-quicksearch{
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 6px;
     
+    input{
+      width: 300px;
+    }
+  }
+  .moui-lastlogin{
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
     margin-bottom: 7px;
     
-    ul{
-      display: flex;
-      justify-content: flex-end;
+    input{
+      width: 300px;
     }
+  }
+  .moui-systemmenu{
+    flex-grow: 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin-bottom: 7px;
     
-    ul > li{
-      display: flex;
-      margin-right: @margin-xlarge;
-    }
-    ul > li:last-child{
-      margin-right: 0;
-    }
-    
-    .moui-dropdownmenu{
-      ul{
-        display: none;
-      }
+    ul.moui-dropdownmenu{
+      display: none;
     }
   }
   .moui-fujitsulogo{
-    margin-left: 50px;
+    margin-left: 30px;
   }
 }
 
 
-.moui-contents-wrapper{
-  display: flex;
-  flex-direction: row;
-  padding: @margin-medium;
-  
-  /*background-color: #f4f4f4;*/
+.moui-maincontents-wrapper{
+  padding: @margin-medium 0;
   
   /* サービスメニュー */
   .moui-servicemenu{
-    width: 300px;
+    padding-right: 12px;
     overflow-y: auto;
     
-    /*background-color: #e9edf0;*/
+    .moui-searchsection{
+      margin: 0 0 @margin-large @margin-large;
+    }
     
     .moui-menusection{
       margin-bottom: @margin-large;
@@ -256,66 +283,158 @@ body{
       color: #525d66;
     }
     
-    ul.moui-menulist, ul.moui-menucategory{
-    }
-    
     ul.moui-menulist > li{
-      
     }
     ul.moui-menulist > li > a{
       display: block;
       margin-left: @margin-large;
-      padding: @margin-medium;
-      border-top: 1px solid #b7babd;
+      padding: @margin-medium @margin-medium @margin-medium 32px;
+      border-top: 1px solid @color-border-default;
+      background-image: url('../images/icon/document1.svg');
+      background-repeat: no-repeat;
+      background-position: 5px center;
+      background-size: 18px;
       text-decoration: none;
       color: #3d464d;
     }
     ul.moui-menulist > li:last-child > a{
-      border-bottom: 1px solid #b7babd;
+      border-bottom: 1px solid @color-border-default;
     }
     ul.moui-menulist > li > a:hover{
       background-color: #d1e2f0;
     }
+    ul.moui-menulist > li > a:active{
+      background-color: #59acf0;
+    }
     ul.moui-menulist > li.moui-current > a{
       background-color: #59acf0;
-      font-weight: bold;
       color: #ffffff;
     }
+    
+    /* アイコン種別 */
+    ul.moui-menulist > li.moui-top a{
+      background-image: url('../images/icon/home.svg');
+    }
+    ul.moui-menulist > li.moui-top.moui-current a{
+      background-image: url('../images/icon/home-selected.svg');
+    }
+    ul.moui-menulist > li.moui-favorite a{
+      background-image: url('../images/icon/tag.svg');
+    }
+    ul.moui-menulist > li.moui-favorite.moui-current a{
+      background-image: url('../images/icon/tag-selected.svg');
+    }
+    ul.moui-menulist > li.moui-all a{
+      background-image: url('../images/icon/list.svg');
+    }
+    ul.moui-menulist > li.moui-all.moui-current a{
+      background-image: url('../images/icon/list-selected.svg');
+    }
+    ul.moui-menulist > li.moui-sequence a{
+      background-image: url('../images/icon/archive.svg');
+    }
+    ul.moui-menulist > li.moui-sequence.moui-current a{
+      background-image: url('../images/icon/archive-selected.svg');
+    }
+    ul.moui-menulist > li.moui-evaluation a{
+      background-image: url('../images/icon/star.svg');
+      background-size: 20px;
+    }
+    ul.moui-menulist > li.moui-evaluation.moui-current a{
+      background-image: url('../images/icon/star-selected.svg');
+      background-size: 20px;
+    }
+    ul.moui-menulist > li.moui-inquiry a{
+      background-image: url('../images/icon/document2.svg');
+    }
+    ul.moui-menulist > li.moui-inquiry.moui-current a{
+      background-image: url('../images/icon/document2-selected.svg');
+    }
+    ul.moui-menulist > li.moui-settings a{
+      background-image: url('../images/icon/gear.svg');
+    }
+    ul.moui-menulist > li.moui-settings.moui-current a{
+      background-image: url('../images/icon/gear-selected.svg');
+    }
+    ul.moui-menulist > li.moui-help a{
+      background-image: url('../images/icon/question.svg');
+    }
+    ul.moui-menulist > li.moui-help.moui-current a{
+      background-image: url('../images/icon/question-selected.svg');
+    }
   }
+  
+  /* メインコンテンツ */
   .moui-maincontents{
-    flex-grow: 1;
-    margin: @margin-large;
+    margin: 0 @margin-large;
+    overflow-y: auto;
   }
 }
 
 /******************************
  * トップ画面
 ******************************/
-main.moui-dashboard{
+main.moui-top{
   display: flex;
   flex-direction: column;
   
   .moui-module{
     margin-bottom: @margin-large;
-    background-color: #ffffff;
+    padding: @margin-medium;
+    
+    
+    h3{
+      margin-bottom: @margin-medium;
+      padding: @margin-small @margin-small @margin-small 40px;
+      background-image: url('../images/icon/info.svg');
+      background-repeat: no-repeat;
+      background-position: 5px center;
+      background-size: 24px;
+      font-size:  @font-size-large;
+    }
+    
+    .moui-contents{
+      background-color: #ffffff;
+      background-color: #e1ebf2;
+      padding: @margin-medium;
+    }
   }
   .moui-module:last-child{
     margin-bottom: 0;
   }
   .moui-notice{
-    padding: @margin-medium;
     order: 1;
+    
+    h3{
+      background-image: url('../images/icon/warning-selected.svg');
+    }
   }
   .moui-minicalendar{
-    padding: @margin-medium;
     order: 2;
+    
+    h3{
+      background-image: url('../images/icon/checkmark.svg');
+    }
   }
   .moui-workovertime{
-    padding: @margin-medium;
     order: 3;
+    
+    h3{
+      background-image: url('../images/icon/clock.svg');
+    }
   }
   .moui-application{
-    padding: @margin-medium;
     order: 4;
+    
+    h3{
+      background-image: url('../images/icon/archive.svg');
+    }
+  }
+  .moui-approval{
+    order: 5;
+    
+    h3{
+      background-image: url('../images/icon/inbox.svg');
+    }
   }
 }

@@ -7,10 +7,11 @@
  * 標準タグスタイル
 ******************************/
 /* 共通 */
+/* フォント */
 /* 配色 */
 /* 装飾 */
 /******************************
- * フォント
+ * Webフォント
 ******************************/
 @font-face {
   font-family: "Fujitsu Sans";
@@ -41,7 +42,7 @@ html {
   font-size: 62.5%;
 }
 body {
-  min-width: 800px;
+  min-width: 900px;
   height: 100%;
   background-color: #ffffff;
   line-height: 1;
@@ -98,6 +99,21 @@ label {
 /* ボタン */
 /* テキスト入力 */
 /* 検索ボックス */
+input[type=search] {
+  display: block;
+  width: 100%;
+  padding: 5px 5px 5px 32px;
+  -webkit-appearance: none;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  border: 1px solid #b7babd;
+  background-image: url('../images/icon/search.svg');
+  background-repeat: no-repeat;
+  background-position: 5px center;
+  background-size: 18px;
+  font-family: "Hiragino Kaku Gothic ProN", "メイリオ", sans-serif;
+  font-size: 1.5rem;
+}
 /* セレクトボックス */
 /******************************
  * コンポーネント
@@ -119,7 +135,7 @@ label {
   font-size: 0;
 }
 /******************************
- * 共通レイアウト
+ * PCレイアウト
 ******************************/
 body {
   display: flex;
@@ -129,9 +145,13 @@ body {
   min-height: 90px;
   z-index: 1001;
 }
-.moui-contents-wrapper {
-  flex-grow: 1;
+.moui-maincontents-wrapper {
+  display: flex;
+  flex-direction: row;
   z-index: 1000;
+}
+.moui-maincontents-wrapper .moui-maincontents {
+  flex-grow: 1;
 }
 /******************************
  * 共通スタイル
@@ -145,10 +165,9 @@ body {
   flex-direction: row;
   align-items: flex-end;
   padding: 10px 20px;
-  /*border-bottom: 3px solid #4b6980;*/
 }
 .moui-systemheader .moui-systemtitle {
-  flex-grow: 3;
+  flex-grow: 1;
   margin-bottom: 1px;
 }
 .moui-systemheader .moui-systemtitle h1 {
@@ -157,99 +176,195 @@ body {
   letter-spacing: 0.3rem;
   color: #4c7799;
 }
-.moui-systemheader .moui-subinformation {
+.moui-systemheader .moui-quicksearch {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 6px;
+}
+.moui-systemheader .moui-quicksearch input {
+  width: 300px;
+}
+.moui-systemheader .moui-lastlogin {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
   margin-bottom: 7px;
 }
-.moui-systemheader .moui-subinformation ul {
+.moui-systemheader .moui-lastlogin input {
+  width: 300px;
+}
+.moui-systemheader .moui-systemmenu {
+  flex-grow: 1;
   display: flex;
+  flex-direction: row;
   justify-content: flex-end;
+  margin-bottom: 7px;
 }
-.moui-systemheader .moui-subinformation ul > li {
-  display: flex;
-  margin-right: 30px;
-}
-.moui-systemheader .moui-subinformation ul > li:last-child {
-  margin-right: 0;
-}
-.moui-systemheader .moui-subinformation .moui-dropdownmenu ul {
+.moui-systemheader .moui-systemmenu ul.moui-dropdownmenu {
   display: none;
 }
 .moui-systemheader .moui-fujitsulogo {
-  margin-left: 50px;
+  margin-left: 30px;
 }
-.moui-contents-wrapper {
-  display: flex;
-  flex-direction: row;
-  padding: 10px;
-  /*background-color: #f4f4f4;*/
+.moui-maincontents-wrapper {
+  padding: 10px 0;
   /* サービスメニュー */
+  /* メインコンテンツ */
 }
-.moui-contents-wrapper .moui-servicemenu {
-  width: 300px;
+.moui-maincontents-wrapper .moui-servicemenu {
+  padding-right: 12px;
   overflow-y: auto;
-  /*background-color: #e9edf0;*/
+  /* アイコン種別 */
 }
-.moui-contents-wrapper .moui-servicemenu .moui-menusection {
+.moui-maincontents-wrapper .moui-servicemenu .moui-searchsection {
+  margin: 0 0 20px 20px;
+}
+.moui-maincontents-wrapper .moui-servicemenu .moui-menusection {
   margin-bottom: 20px;
 }
-.moui-contents-wrapper .moui-servicemenu .moui-menusection:last-child {
+.moui-maincontents-wrapper .moui-servicemenu .moui-menusection:last-child {
   margin-bottom: 0;
 }
-.moui-contents-wrapper .moui-servicemenu .moui-title {
+.moui-maincontents-wrapper .moui-servicemenu .moui-title {
   margin: 30px 20px 10px 20px;
   font-weight: bold;
   color: #525d66;
 }
-.moui-contents-wrapper .moui-servicemenu ul.moui-menulist > li > a {
+.moui-maincontents-wrapper .moui-servicemenu ul.moui-menulist > li > a {
   display: block;
   margin-left: 20px;
-  padding: 10px;
+  padding: 10px 10px 10px 32px;
   border-top: 1px solid #b7babd;
+  background-image: url('../images/icon/document1.svg');
+  background-repeat: no-repeat;
+  background-position: 5px center;
+  background-size: 18px;
   text-decoration: none;
   color: #3d464d;
 }
-.moui-contents-wrapper .moui-servicemenu ul.moui-menulist > li:last-child > a {
+.moui-maincontents-wrapper .moui-servicemenu ul.moui-menulist > li:last-child > a {
   border-bottom: 1px solid #b7babd;
 }
-.moui-contents-wrapper .moui-servicemenu ul.moui-menulist > li > a:hover {
+.moui-maincontents-wrapper .moui-servicemenu ul.moui-menulist > li > a:hover {
   background-color: #d1e2f0;
 }
-.moui-contents-wrapper .moui-servicemenu ul.moui-menulist > li.moui-current > a {
+.moui-maincontents-wrapper .moui-servicemenu ul.moui-menulist > li > a:active {
   background-color: #59acf0;
-  font-weight: bold;
+}
+.moui-maincontents-wrapper .moui-servicemenu ul.moui-menulist > li.moui-current > a {
+  background-color: #59acf0;
   color: #ffffff;
 }
-.moui-contents-wrapper .moui-maincontents {
-  flex-grow: 1;
-  margin: 20px;
+.moui-maincontents-wrapper .moui-servicemenu ul.moui-menulist > li.moui-top a {
+  background-image: url('../images/icon/home.svg');
+}
+.moui-maincontents-wrapper .moui-servicemenu ul.moui-menulist > li.moui-top.moui-current a {
+  background-image: url('../images/icon/home-selected.svg');
+}
+.moui-maincontents-wrapper .moui-servicemenu ul.moui-menulist > li.moui-favorite a {
+  background-image: url('../images/icon/tag.svg');
+}
+.moui-maincontents-wrapper .moui-servicemenu ul.moui-menulist > li.moui-favorite.moui-current a {
+  background-image: url('../images/icon/tag-selected.svg');
+}
+.moui-maincontents-wrapper .moui-servicemenu ul.moui-menulist > li.moui-all a {
+  background-image: url('../images/icon/list.svg');
+}
+.moui-maincontents-wrapper .moui-servicemenu ul.moui-menulist > li.moui-all.moui-current a {
+  background-image: url('../images/icon/list-selected.svg');
+}
+.moui-maincontents-wrapper .moui-servicemenu ul.moui-menulist > li.moui-sequence a {
+  background-image: url('../images/icon/archive.svg');
+}
+.moui-maincontents-wrapper .moui-servicemenu ul.moui-menulist > li.moui-sequence.moui-current a {
+  background-image: url('../images/icon/archive-selected.svg');
+}
+.moui-maincontents-wrapper .moui-servicemenu ul.moui-menulist > li.moui-evaluation a {
+  background-image: url('../images/icon/star.svg');
+  background-size: 20px;
+}
+.moui-maincontents-wrapper .moui-servicemenu ul.moui-menulist > li.moui-evaluation.moui-current a {
+  background-image: url('../images/icon/star-selected.svg');
+  background-size: 20px;
+}
+.moui-maincontents-wrapper .moui-servicemenu ul.moui-menulist > li.moui-inquiry a {
+  background-image: url('../images/icon/document2.svg');
+}
+.moui-maincontents-wrapper .moui-servicemenu ul.moui-menulist > li.moui-inquiry.moui-current a {
+  background-image: url('../images/icon/document2-selected.svg');
+}
+.moui-maincontents-wrapper .moui-servicemenu ul.moui-menulist > li.moui-settings a {
+  background-image: url('../images/icon/gear.svg');
+}
+.moui-maincontents-wrapper .moui-servicemenu ul.moui-menulist > li.moui-settings.moui-current a {
+  background-image: url('../images/icon/gear-selected.svg');
+}
+.moui-maincontents-wrapper .moui-servicemenu ul.moui-menulist > li.moui-help a {
+  background-image: url('../images/icon/question.svg');
+}
+.moui-maincontents-wrapper .moui-servicemenu ul.moui-menulist > li.moui-help.moui-current a {
+  background-image: url('../images/icon/question-selected.svg');
+}
+.moui-maincontents-wrapper .moui-maincontents {
+  margin: 0 20px;
+  overflow-y: auto;
 }
 /******************************
  * トップ画面
 ******************************/
-main.moui-dashboard {
+main.moui-top {
   display: flex;
   flex-direction: column;
 }
-main.moui-dashboard .moui-module {
+main.moui-top .moui-module {
   margin-bottom: 20px;
-  background-color: #ffffff;
+  padding: 10px;
 }
-main.moui-dashboard .moui-module:last-child {
+main.moui-top .moui-module h3 {
+  margin-bottom: 10px;
+  padding: 5px 5px 5px 40px;
+  background-image: url('../images/icon/info.svg');
+  background-repeat: no-repeat;
+  background-position: 5px center;
+  background-size: 24px;
+  font-size: 2rem;
+}
+main.moui-top .moui-module .moui-contents {
+  background-color: #ffffff;
+  background-color: #e1ebf2;
+  padding: 10px;
+}
+main.moui-top .moui-module:last-child {
   margin-bottom: 0;
 }
-main.moui-dashboard .moui-notice {
-  padding: 10px;
+main.moui-top .moui-notice {
   order: 1;
 }
-main.moui-dashboard .moui-minicalendar {
-  padding: 10px;
+main.moui-top .moui-notice h3 {
+  background-image: url('../images/icon/warning-selected.svg');
+}
+main.moui-top .moui-minicalendar {
   order: 2;
 }
-main.moui-dashboard .moui-workovertime {
-  padding: 10px;
+main.moui-top .moui-minicalendar h3 {
+  background-image: url('../images/icon/checkmark.svg');
+}
+main.moui-top .moui-workovertime {
   order: 3;
 }
-main.moui-dashboard .moui-application {
-  padding: 10px;
+main.moui-top .moui-workovertime h3 {
+  background-image: url('../images/icon/clock.svg');
+}
+main.moui-top .moui-application {
   order: 4;
+}
+main.moui-top .moui-application h3 {
+  background-image: url('../images/icon/archive.svg');
+}
+main.moui-top .moui-approval {
+  order: 5;
+}
+main.moui-top .moui-approval h3 {
+  background-image: url('../images/icon/inbox.svg');
 }
