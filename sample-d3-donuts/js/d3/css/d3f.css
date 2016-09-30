@@ -1,0 +1,414 @@
+﻿@charset "utf-8";
+/* ------------------------------------------------------------
+  color set
+------------------------------------------------------------ */
+/* ------------------------------
+ 塗りのカラーセット1
+------------------------------ */
+/*標準色*/
+.fillColorSet1Basic {fill: #6BA0EF;}
+
+/*カテゴリ*/
+.fillColorSet1Color1 {fill: #6BA0EF;}
+.fillColorSet1Color2 {fill: #F1BA31;}
+.fillColorSet1Color3 {fill: #9CD816;}
+.fillColorSet1Color4 {fill: #FC8D3A;}
+.fillColorSet1Color5 {fill: #67C4E9;}
+.fillColorSet1Color6 {fill: #AC87F0;}
+.fillColorSet1Color7 {fill: #A1C3F5;}
+.fillColorSet1Color8 {fill: #FFE299;}
+.fillColorSet1Color9 {fill: #CDEE82;}
+.fillColorSet1Color10 {fill: #FDB077;}
+.fillColorSet1Color11 {fill: #98D7F0;}
+.fillColorSet1Color12 {fill: #C7AFF3;}
+.fillColorSet1Color13 {fill: #6E94BE;}
+.fillColorSet1Color14 {fill: #CCB270;}
+.fillColorSet1Color15 {fill: #82AE4C;}
+.fillColorSet1Color16 {fill: #D59F69;}
+.fillColorSet1Color17 {fill: #70A6BC;}
+.fillColorSet1Color18 {fill: #967BB9;}
+.fillColorSet1Color19 {fill: #003A7A;}
+.fillColorSet1Color20 {fill: #866000;}
+
+/*強調色*/
+.fillColorSet1Emphasize {fill: #DE1F00;}
+
+/* ------------------------------
+ 塗りのカラーセット2：標準色グラデーション
+------------------------------ */
+/*標準色*/
+.fillColorSet2Basic {fill: #1A6DE6;}
+
+/*カテゴリ*/
+.fillColorSet2Color1 {fill: #1A6DE6;}
+.fillColorSet2Color2 {fill: #3E84EA;}
+.fillColorSet2Color3 {fill: #6BA0EF;}
+.fillColorSet2Color4 {fill: #A1C3F5;}
+.fillColorSet2Color5 {fill: #C0D7F8;}
+.fillColorSet2Color6 {fill: #DDE9FB;}
+.fillColorSet2Color7 {fill: #A7BFD9;}
+.fillColorSet2Color8 {fill: #6E94BE;}
+.fillColorSet2Color9 {fill: #4B7AAD;}
+.fillColorSet2Color10 {fill: #3A5F88;}
+.fillColorSet2Color11 {fill: #294563;}
+.fillColorSet2Color12 {fill: #00234A;}
+.fillColorSet2Color13 {fill: #003A7A;}
+.fillColorSet2Color14 {fill: #0056B4;}
+
+/*強調色*/
+.fillColorSet2Emphasize {fill: #DE1F00;}
+
+/*ポジティブ*/
+.fillColorSet2Positive {fill: #1A6DE6;}
+
+/*ネガティブ*/
+.fillColorSet2Negative {fill: #A1C3F5;}
+
+/* ------------------------------
+ 塗りのカラーセット3：対比色グラデーション
+------------------------------ */
+/*標準色*/
+.fillColorSet3Basic {fill: #E8AB12;}
+
+/*カテゴリ*/
+.fillColorSet3Color1 {fill: #E8AB12;}
+.fillColorSet3Color2 {fill: #F1BA31;}
+.fillColorSet3Color3 {fill: #FAD372;}
+.fillColorSet3Color4 {fill: #FFE299;}
+.fillColorSet3Color5 {fill: #FFEBBD;}
+.fillColorSet3Color6 {fill: #FFF5E1;}
+.fillColorSet3Color7 {fill: #DFCEA5;}
+.fillColorSet3Color8 {fill: #CCB270;}
+.fillColorSet3Color9 {fill: #B89642;}
+.fillColorSet3Color10 {fill: #967B36;}
+.fillColorSet3Color11 {fill: #7F682F;}
+.fillColorSet3Color12 {fill: #604500;}
+.fillColorSet3Color13 {fill: #866000;}
+.fillColorSet3Color14 {fill: #BE8800;}
+
+/*強調色*/
+.fillColorSet3Emphasize {fill: #DE1F00;}
+
+/* ------------------------------
+ 塗りのカラーセット：強調色以外単色
+------------------------------ */
+/*標準色*/
+.fillColorSetEmphasizeBasic {fill: #A6A6A6;}
+
+/*強調色*/
+.fillColorSetEmphasizeStrong {fill: #DE1F00;}
+
+/*カテゴリ*/
+.fillColorSetEmphasizeColor1 {fill: #4B4B4B;}
+.fillColorSetEmphasizeColor2 {fill: #6B6B6B;}
+.fillColorSetEmphasizeColor3 {fill: #828282;}
+.fillColorSetEmphasizeColor4 {fill: #A6A6A6;}
+.fillColorSetEmphasizeColor5 {fill: #CBCBCB;}
+.fillColorSetEmphasizeColor6 {fill: #E2E2E2;}
+.fillColorSetEmphasizeColor7 {fill: #CBCBCB;}
+.fillColorSetEmphasizeColor8 {fill: #A6A6A6;}
+.fillColorSetEmphasizeColor9 {fill: #828282;}
+.fillColorSetEmphasizeColor10 {fill: #6B6B6B;}
+.fillColorSetEmphasizeColor11 {fill: #4B4B4B;}
+.fillColorSetEmphasizeColor12 {fill: #2E2E2E;}
+
+/* ------------------------------
+線のカラーセット1
+------------------------------ */
+/*標準色*/
+.strokeColorSetBasic {fill: #1A6DE6;}
+
+/*カテゴリ*/
+.strokeColorSet1Color1 {stroke: #1A6DE6;}
+.strokeColorSet1Color2 {stroke: #E8AB12;}
+.strokeColorSet1Color3 {stroke: #8FC606;}
+.strokeColorSet1Color4 {stroke: #F66C04;}
+.strokeColorSet1Color5 {stroke: #289AC8;}
+.strokeColorSet1Color6 {stroke: #703BCF;}
+.strokeColorSet1Color7 {stroke: #A1C3F5;}
+.strokeColorSet1Color8 {stroke: #FFE299;}
+.strokeColorSet1Color9 {stroke: #CDEE82;}
+.strokeColorSet1Color10 {stroke: #FDB077;}
+.strokeColorSet1Color11 {stroke: #98D7F0;}
+.strokeColorSet1Color12 {stroke: #C7AFF3;}
+.strokeColorSet1Color13 {stroke: #6E94BE;}
+.strokeColorSet1Color14 {stroke: #CCB270;}
+.strokeColorSet1Color15 {stroke: #82AE4C;}
+.strokeColorSet1Color16 {stroke: #D59F69;}
+.strokeColorSet1Color17 {stroke: #70A6BC;}
+.strokeColorSet1Color18 {stroke: #967BB9;}
+.strokeColorSet1Color19 {stroke: #003A7A;}
+.strokeColorSet1Color20 {stroke: #866000;}
+
+/*強調色*/
+.strokeColorSet1Emphasize {stroke: #DE1F00;}
+
+/* ------------------------------
+ 線のカラーセット2：標準色グラデーション
+------------------------------ */
+/*標準色*/
+.strokeColorSet2Basic {stroke: #1A6DE6;}
+
+/*カテゴリ*/
+.strokeColorSet2Color1 {stroke: #1A6DE6;}
+.strokeColorSet2Color2 {stroke: #3E84EA;}
+.strokeColorSet2Color3 {stroke: #6BA0EF;}
+.strokeColorSet2Color4 {stroke: #A1C3F5;}
+.strokeColorSet2Color5 {stroke: #C0D7F8;}
+.strokeColorSet2Color6 {stroke: #DDE9FB;}
+.strokeColorSet2Color7 {stroke: #A7BFD9;}
+.strokeColorSet2Color8 {stroke: #6E94BE;}
+.strokeColorSet2Color9 {stroke: #4B7AAD;}
+.strokeColorSet2Color10 {stroke: #3A5F88;}
+.strokeColorSet2Color11 {stroke: #294563;}
+.strokeColorSet2Color12 {stroke: #00234A;}
+.strokeColorSet2Color13 {stroke: #003A7A;}
+.strokeColorSet2Color14 {stroke: #0056B4;}
+
+/*強調色*/
+.strokeColorSet2Emphasize {stroke: #DE1F00;}
+
+/* ------------------------------
+ 線のカラーセット3：対比色グラデーション
+------------------------------ */
+/*標準色*/
+.strokeColorSet3Basic {stroke: #E8AB12;}
+
+/*カテゴリ*/
+.strokeColorSet3Color1 {stroke: #E8AB12;}
+.strokeColorSet3Color2 {stroke: #F1BA31;}
+.strokeColorSet3Color3 {stroke: #FAD372;}
+.strokeColorSet3Color4 {stroke: #FFE299;}
+.strokeColorSet3Color5 {stroke: #FFEBBD;}
+.strokeColorSet3Color6 {stroke: #FFF5E1;}
+.strokeColorSet3Color7 {stroke: #DFCEA5;}
+.strokeColorSet3Color8 {stroke: #CCB270;}
+.strokeColorSet3Color9 {stroke: #B89642;}
+.strokeColorSet3Color10 {stroke: #967B36;}
+.strokeColorSet3Color11 {stroke: #7F682F;}
+.strokeColorSet3Color12 {stroke: #604500;}
+.strokeColorSet3Color13 {stroke: #866000;}
+.strokeColorSet3Color14 {stroke: #BE8800;}
+
+/*強調色*/
+.strokeColorSet3Emphasize {stroke: #DE1F00;}
+
+/* ------------------------------
+ 線のカラーセット：強調色以外単色
+------------------------------ */
+/*標準色*/
+.strokeColorSetEmphasizeBasic {stroke: #A6A6A6;}
+
+/*強調色*/
+.strokeColorSetEmphasizeStrong {stroke: #DE1F00;}
+
+/*カテゴリ*/
+.strokeColorSetEmphasizeColor1 {stroke: #4B4B4B;}
+.strokeColorSetEmphasizeColor2 {stroke: #6B6B6B;}
+.strokeColorSetEmphasizeColor3 {stroke: #828282;}
+.strokeColorSetEmphasizeColor4 {stroke: #A6A6A6;}
+.strokeColorSetEmphasizeColor5 {stroke: #CBCBCB;}
+.strokeColorSetEmphasizeColor6 {stroke: #E2E2E2;}
+.strokeColorSetEmphasizeColor7 {stroke: #CBCBCB;}
+.strokeColorSetEmphasizeColor8 {stroke: #A6A6A6;}
+.strokeColorSetEmphasizeColor9 {stroke: #828282;}
+.strokeColorSetEmphasizeColor10 {stroke: #6B6B6B;}
+.strokeColorSetEmphasizeColor11 {stroke: #4B4B4B;}
+.strokeColorSetEmphasizeColor12 {stroke: #2E2E2E;}
+
+/* ------------------------------------------------------------
+  d3 Line　Chart
+------------------------------------------------------------ */
+.lineChartAxisTitle{
+	font-size: 90%;
+	font-weight: bold;
+}
+.lineChartAxis{
+	font-size: 90%;
+}
+.lineChartAxis path, .lineChartAxis line {
+  fill: none;
+  stroke: #aaaaaa;
+  shape-rendering: crispEdges;
+}
+.lineChartLine {
+  fill: none;
+  stroke-width: 1.5px;
+}
+
+.lineLegend{
+	font-size: 90%;
+}
+
+/* ------------------------------------------------------------
+  d3 Bar Chart
+------------------------------------------------------------ */
+.barChartAxisTitle{
+	font-size: 90%;
+	font-weight: bold;
+}
+.barChartAxis{
+	font-size: 90%;
+}
+.barChartAxis path, .barChartAxis line {
+	fill: none;
+	stroke: #999999;
+	shape-rendering: crispEdges;
+}
+.barLegend{
+	font-size: 90%;
+}
+
+/*effect*/
+.barShadow{
+	fill: #aaaaaa;
+}
+
+/* ------------------------------------------------------------
+  d3 Pie　Chart
+------------------------------------------------------------ */
+.pie{ 
+	stroke: #ffffff;
+	stroke-width: 1px;
+}
+.pieLegendTitle{
+	font-size: 90%;
+}
+.pieLegend{
+	font-size: 90%;
+}
+/*effect*/
+.pieShadow{
+	fill: #aaaaaa;
+	}
+.pieHighlightTop{
+	stop-color: #ffffff;
+	stop-opacity:0.2;
+}
+.pieHighlightBottom{
+	stop-color: #ffffff;
+	stop-opacity:0;
+}
+/* ------------------------------------------------------------
+  d3 Histogram
+------------------------------------------------------------ */
+.histogramLine{
+	stroke: #ffffff;
+}
+.histogramAxisTitle{
+	font-size: 90%;
+	font-weight: bold;
+}
+.histogramAxisX{
+	font-size: 0%;
+}
+.histogramAxisX path, .histogramAxisX line {
+	fill: none;
+	stroke: #999999;
+	shape-rendering: crispEdges;
+}
+.histogramAxisY{
+	font-size: 90%;
+}
+.histogramAxisY path, .histogramAxisY line {
+	fill: none;
+	stroke: #999999;
+	shape-rendering: crispEdges;
+}
+
+/* ------------------------------------------------------------
+  d3 Scatter Plot
+------------------------------------------------------------ */
+.scatterAxisTitle{
+	font-size: 90%;
+	font-weight: bold;
+}
+.scatterAxis{
+	font-size: 90%;
+}
+.scatterAxis path, .scatterAxis line {
+	fill: none;
+	stroke: #aaaaaa;
+	shape-rendering: crispEdges;
+}
+.scatterDot {
+	stroke: #ffffff;
+	opacity: 0.5;
+}
+.scatterMultiCategoryDot {
+	stroke: #ffffff;
+	opacity: 1.0;
+}
+.scatterLegend{
+	font-size: 90%;
+}
+.scatterLegendRect{
+	
+}
+
+/* ------------------------------------------------------------
+  d3 Box Chart
+------------------------------------------------------------ */
+.boxChart {
+	font-size: 90%;
+}
+
+.boxChart line{
+	stroke: #666666;
+	stroke-width: 1.5px;
+}
+.boxChart rect,
+.boxChart circle {
+	fill: #6BA0EF;
+	stroke: #003A7A;
+	stroke-width: 1px;
+	opacity: 0.6;
+}
+
+.boxChart .boxChartMedian {
+	stroke: #00234A;
+	stroke-width:3px;
+}
+
+.boxChart .boxChartCenter {
+	 stroke-dasharray: 6, 3;
+}
+
+.boxChart .boxChartOutlier {
+	fill: none;
+	stroke: #6B6B6B;
+	stroke-width: 1px;
+}
+
+/* ------------------------------------------------------------
+  d3 Dendrogram
+------------------------------------------------------------ */
+.dendrogramNode circle {
+	fill: #6BA0EF;
+	stroke: #003A7A;
+	stroke-width: 1px;
+	opacity: 0.8;
+}
+
+.dendrogramNode {
+	font-size: 90%;
+ 	color: #000000;
+}
+
+.dendrogramTerminalBox {
+	fill: #ffffff;
+	stroke: #ffffff;
+	stroke-width: 0.5px;
+	color: #000000;
+}
+
+.dendrogramTerminalString {
+	fill: #000000;
+}
+
+.dendrogramLink {
+	fill: none;
+	stroke: #cccccc;
+	stroke-width: 1.5px;
+}
+

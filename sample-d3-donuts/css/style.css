@@ -1,0 +1,127 @@
+@charset "utf-8";
+/* ------------------------------------------------------------
+  common
+------------------------------------------------------------ */
+html {
+  height: 100%;
+  font-size: 62.5%;/*1rem=10px*/
+}
+body {
+  min-width: 100px;
+  height: 100%;
+  background-color: #ffffff;
+  font-family: 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', 'メイリオ', Meiryo, 'ＭＳ Ｐゴシック', sans-serif;
+  font-size: 1.4rem;
+  color: #3b3b35;
+  overflow: hidden;
+}
+/* link */
+a{text-decoration: underline;}
+a:link {color: #444444;}
+a:visited {color: #444444;}
+a:hover {color: #777777;}
+a:active {color: #777777;}
+/* table */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+td {
+  font-size: 62.5%;
+}
+/* hr */
+hr{
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+/*align*/
+.alignCenter{text-align: center;}
+.alignLeft{text-align: left;}
+.alignRight{text-align: right;}
+/*clearfix*/
+.clearfix:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
+}
+* html .clearfix {
+  zoom: 1;
+} /* IE6 */
+*:first-child+ html .clearfix {
+  zoom: 1;
+} /* IE7 */
+
+/* ------------------------------------------------------------
+  chart
+------------------------------------------------------------ */
+
+#chart{
+  position: relative;
+  width: 200px;
+  height: 200px;
+}
+
+#result_speed{
+  width: 200px;
+  height: 200px;
+}
+
+/*result speed chart*/
+#result_speed .arc_base{
+}
+
+#result_speed .arc_result{
+}
+#result_speed .arc_average{
+}
+
+#result_speed .arc_base{
+}
+#result_speed_text{
+  position: absolute;
+  width: 200px;
+  height: 180px;
+  top: 10px;
+}
+#result_speed_text .result_text{
+  position: absolute;
+  width: 100%;
+  top: 50px;
+  text-align: center;
+  color: #6BA0EF;
+}
+#result_speed_text .result_text .value{
+  font-size: 4.8rem;
+}
+#result_speed_text .result_text .unit{
+  font-size: 1.4rem;
+}
+#result_speed_text .average_text{
+  position: absolute;
+  width: 100%;
+  top: 110px;
+  text-align: center;
+  color: #739C00;
+}
+#result_speed_text .average_text .value{
+  font-size: 1.4rem;
+}
+#result_speed_text .average_text .unit{
+  font-size: 1.4rem;
+}
+#result_speed_text .max_text{
+  position: absolute;
+  width: 100%;
+  top: 130px;
+  text-align: center;
+  color: #6B6B6B;
+}
+#result_speed_text .max_text .value{
+  font-size: 1.4rem;
+}
+#result_speed_text .max_text .unit{
+  font-size: 1.4rem;
+}
