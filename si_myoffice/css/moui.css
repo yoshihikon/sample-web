@@ -42,7 +42,7 @@ html {
   font-size: 62.5%;
 }
 body {
-  min-width: 900px;
+  min-width: 1200px;
   height: 100%;
   background-color: #ffffff;
   line-height: 1;
@@ -107,7 +107,8 @@ input[type=search] {
   -webkit-appearance: none;
   -moz-box-shadow: none;
   -webkit-box-shadow: none;
-  border: 1px solid #b7babd;
+  border: none;
+  border-bottom: 1px solid #b7babd;
   background-image: url('../images/icon/search.svg');
   background-repeat: no-repeat;
   background-position: 5px center;
@@ -122,42 +123,25 @@ input[type=search] {
 /*スペーサー*/
 .moui-spacer-large {
   display: inline-block;
-  width: 20px;
+  width: 40px;
   font-size: 0;
 }
 .moui-spacer-medium {
   display: inline-block;
-  width: 10px;
+  width: 20px;
   font-size: 0;
 }
 .moui-spacer-small {
   display: inline-block;
-  width: 5px;
+  width: 10px;
   font-size: 0;
-}
-/******************************
- * PCレイアウト
-******************************/
-body {
-  display: flex;
-  flex-direction: column;
-}
-.moui-systemheader {
-  min-height: 90px;
-  z-index: 1001;
-}
-.moui-maincontents-wrapper {
-  display: flex;
-  flex-direction: row;
-  z-index: 1000;
-}
-.moui-maincontents-wrapper .moui-maincontents {
-  flex-grow: 1;
 }
 /******************************
  * 共通スタイル
 ******************************/
 body {
+  display: flex;
+  flex-direction: column;
   background: linear-gradient(to bottom, #ffffff, #f5faff);
 }
 /* ヘッダー */
@@ -165,7 +149,8 @@ body {
   display: flex;
   flex-direction: row;
   align-items: flex-end;
-  padding: 10px 20px;
+  min-height: 120px;
+  padding: 20px 40px;
 }
 .moui-systemheader .moui-systemtitle {
   flex-grow: 1;
@@ -206,20 +191,23 @@ body {
   display: none;
 }
 .moui-systemheader .moui-fujitsulogo {
-  margin-left: 30px;
+  margin-left: 40px;
 }
 .moui-maincontents-wrapper {
-  padding: 10px 0;
+  display: flex;
+  flex-direction: row;
+  padding: 20px 40px;
   /* サービスメニュー */
   /* メインコンテンツ */
 }
 .moui-maincontents-wrapper .moui-servicemenu {
+  margin-right: calc(28px);
   padding-right: 12px;
   overflow-y: auto;
   /* アイコン種別 */
 }
 .moui-maincontents-wrapper .moui-servicemenu .moui-searchsection {
-  margin: 0 0 20px 20px;
+  margin-bottom: 20px;
 }
 .moui-maincontents-wrapper .moui-servicemenu .moui-menusection {
   margin-bottom: 20px;
@@ -228,18 +216,17 @@ body {
   margin-bottom: 0;
 }
 .moui-maincontents-wrapper .moui-servicemenu .moui-title {
-  margin: 30px 20px 10px 20px;
+  margin-bottom: 20px;
   font-weight: bold;
   color: #525d66;
 }
 .moui-maincontents-wrapper .moui-servicemenu ul.moui-menulist > li > a {
   display: block;
-  margin-left: 20px;
-  padding: 10px 10px 10px 32px;
+  padding: 10px 10px 10px 40px;
   border-top: 1px solid #b7babd;
   background-image: url('../images/icon/document1.svg');
   background-repeat: no-repeat;
-  background-position: 5px center;
+  background-position: 10px center;
   background-size: 18px;
   text-decoration: none;
   color: #3d464d;
@@ -291,6 +278,8 @@ body {
 }
 .moui-maincontents-wrapper .moui-servicemenu ul.moui-menulist > li.moui-inquiry a {
   background-image: url('../images/icon/document2.svg');
+  background-position: 12px center;
+  background-size: 16px;
 }
 .moui-maincontents-wrapper .moui-servicemenu ul.moui-menulist > li.moui-inquiry.moui-current a {
   background-image: url('../images/icon/document2-selected.svg');
@@ -308,7 +297,7 @@ body {
   background-image: url('../images/icon/question-selected.svg');
 }
 .moui-maincontents-wrapper .moui-maincontents {
-  margin: 0 20px;
+  flex-grow: 1;
   overflow-y: auto;
 }
 /******************************
@@ -320,11 +309,9 @@ main.moui-top {
 }
 main.moui-top .moui-module {
   margin-bottom: 20px;
-  padding: 10px;
 }
 main.moui-top .moui-module h3 {
-  margin-bottom: 10px;
-  padding: 5px 5px 5px 40px;
+  padding: 10px 10px 10px 40px;
   background-image: url('../images/icon/info.svg');
   background-repeat: no-repeat;
   background-position: 5px center;
@@ -339,15 +326,10 @@ main.moui-top .moui-module:last-child {
   margin-bottom: 0;
 }
 main.moui-top .moui-transportation {
-  order: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 0;
+  text-align: center;
 }
 main.moui-top .moui-transportation .moui-center {
   display: inline-flex;
-  justify-content: center;
   align-items: center;
   padding: 10px;
   border-radius: 3px;
@@ -356,37 +338,21 @@ main.moui-top .moui-transportation .moui-center {
 main.moui-top .moui-transportation h3 {
   display: inline-block;
   margin-right: 20px;
-  margin-bottom: 0;
   background-image: url('../images/icon/train.svg');
   background-position: 8px center;
   background-size: 18px;
 }
-main.moui-top .moui-notice {
-  order: 2;
-}
 main.moui-top .moui-notice h3 {
   background-image: url('../images/icon/warning-selected.svg');
-}
-main.moui-top .moui-minicalendar {
-  order: 3;
 }
 main.moui-top .moui-minicalendar h3 {
   background-image: url('../images/icon/checkmark.svg');
 }
-main.moui-top .moui-workovertime {
-  order: 4;
-}
 main.moui-top .moui-workovertime h3 {
   background-image: url('../images/icon/clock.svg');
 }
-main.moui-top .moui-application {
-  order: 5;
-}
 main.moui-top .moui-application h3 {
   background-image: url('../images/icon/archive.svg');
-}
-main.moui-top .moui-approval {
-  order: 6;
 }
 main.moui-top .moui-approval h3 {
   background-image: url('../images/icon/inbox.svg');
