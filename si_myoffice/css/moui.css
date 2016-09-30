@@ -10,6 +10,25 @@
 /* 配色 */
 /* 装飾 */
 /******************************
+ * フォント
+******************************/
+@font-face {
+  font-family: "Fujitsu Sans";
+  src: url('../font/eot/FujitsuSansRegular.eot'), url('../font/FujitsuSansRegular.ttf') format('truetype');
+}
+@font-face {
+  font-family: "Fujitsu Sans Bold";
+  src: url('../font/eot/FujitsuSansBold.eot'), url('../font/FujitsuSansBold.ttf') format('truetype');
+}
+@font-face {
+  font-family: "Fujitsu Sans Medium";
+  src: url('../font/eot/FujitsuSansMedium.eot'), url('../font/FujitsuSansMedium.ttf') format('truetype');
+}
+@font-face {
+  font-family: "Fujitsu Sans Light";
+  src: url('../font/eot/FujitsuSansLight.eot'), url('../font/FujitsuSansLight.ttf') format('truetype');
+}
+/******************************
  * 標準タグスタイル
 ******************************/
 * {
@@ -27,7 +46,7 @@ body {
   background-color: #ffffff;
   line-height: 1;
   font-size: 1.5rem;
-  font-family: Sans-serif;
+  font-family: "Hiragino Kaku Gothic ProN", "メイリオ", sans-serif;
   font-weight: 300;
   color: #222222;
   -webkit-text-size-adjust: 100%;
@@ -107,7 +126,7 @@ body {
   flex-direction: column;
 }
 .moui-systemheader {
-  height: 90px;
+  min-height: 90px;
   z-index: 1001;
 }
 .moui-contents-wrapper {
@@ -117,19 +136,29 @@ body {
 /******************************
  * 共通スタイル
 ******************************/
+body {
+  background: linear-gradient(to bottom, #ffffff, #f5faff);
+}
 /* ヘッダー */
 .moui-systemheader {
   display: flex;
   flex-direction: row;
   align-items: flex-end;
   padding: 10px 20px;
-  box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.2);
+  /*border-bottom: 3px solid #4b6980;*/
 }
 .moui-systemheader .moui-systemtitle {
   flex-grow: 3;
+  margin-bottom: 1px;
 }
 .moui-systemheader .moui-systemtitle h1 {
-  font-size: 3.6rem;
+  font-family: "Fujitsu Sans";
+  font-size: 4.5rem;
+  letter-spacing: 0.3rem;
+  color: #4c7799;
+}
+.moui-systemheader .moui-subinformation {
+  margin-bottom: 7px;
 }
 .moui-systemheader .moui-subinformation ul {
   display: flex;
@@ -137,29 +166,58 @@ body {
 }
 .moui-systemheader .moui-subinformation ul > li {
   display: flex;
+  margin-right: 30px;
+}
+.moui-systemheader .moui-subinformation ul > li:last-child {
+  margin-right: 0;
 }
 .moui-systemheader .moui-subinformation .moui-dropdownmenu ul {
   display: none;
 }
-/* サービスメニュー */
+.moui-systemheader .moui-fujitsulogo {
+  margin-left: 50px;
+}
 .moui-contents-wrapper {
   display: flex;
   flex-direction: row;
-  align-items: flex-start;
-  background-color: #fdfdfd;
+  padding: 10px;
+  /*background-color: #f4f4f4;*/
+  /* サービスメニュー */
 }
 .moui-contents-wrapper .moui-servicemenu {
-  width: 200px;
-  margin: 20px 0 20px 20px;
+  width: 300px;
+  overflow-y: auto;
+  /*background-color: #e9edf0;*/
+}
+.moui-contents-wrapper .moui-servicemenu .moui-menusection {
+  margin-bottom: 20px;
+}
+.moui-contents-wrapper .moui-servicemenu .moui-menusection:last-child {
+  margin-bottom: 0;
+}
+.moui-contents-wrapper .moui-servicemenu .moui-title {
+  margin: 30px 20px 10px 20px;
+  font-weight: bold;
+  color: #525d66;
+}
+.moui-contents-wrapper .moui-servicemenu ul.moui-menulist > li > a {
+  display: block;
+  margin-left: 20px;
   padding: 10px;
-  border-radius: 3px;
-  box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.2);
+  border-top: 1px solid #b7babd;
+  text-decoration: none;
+  color: #3d464d;
 }
-.moui-contents-wrapper .moui-servicemenu .moui-favorites {
-  display: block;
+.moui-contents-wrapper .moui-servicemenu ul.moui-menulist > li:last-child > a {
+  border-bottom: 1px solid #b7babd;
 }
-.moui-contents-wrapper .moui-servicemenu .moui-category {
-  display: block;
+.moui-contents-wrapper .moui-servicemenu ul.moui-menulist > li > a:hover {
+  background-color: #d1e2f0;
+}
+.moui-contents-wrapper .moui-servicemenu ul.moui-menulist > li.moui-current > a {
+  background-color: #59acf0;
+  font-weight: bold;
+  color: #ffffff;
 }
 .moui-contents-wrapper .moui-maincontents {
   flex-grow: 1;
@@ -174,6 +232,7 @@ main.moui-dashboard {
 }
 main.moui-dashboard .moui-module {
   margin-bottom: 20px;
+  background-color: #ffffff;
 }
 main.moui-dashboard .moui-module:last-child {
   margin-bottom: 0;
@@ -181,20 +240,16 @@ main.moui-dashboard .moui-module:last-child {
 main.moui-dashboard .moui-notice {
   padding: 10px;
   order: 1;
-  border: 1px solid;
 }
 main.moui-dashboard .moui-minicalendar {
   padding: 10px;
   order: 2;
-  border: 1px solid;
 }
 main.moui-dashboard .moui-workovertime {
   padding: 10px;
   order: 3;
-  border: 1px solid;
 }
 main.moui-dashboard .moui-application {
   padding: 10px;
   order: 4;
-  border: 1px solid;
 }

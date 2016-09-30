@@ -7,6 +7,7 @@
  * 標準タグスタイル
 ******************************/
 /* 共通 */
+@margin-xlarge: 30px;
 @margin-large: 20px;
 @margin-medium: 10px;
 @margin-small: 5px;
@@ -35,6 +36,26 @@
 @box-shadow: 0 1px 3px 1px rgba(0,0,0,0.2);
 
 /******************************
+ * フォント
+******************************/
+@font-face {
+  font-family: "Fujitsu Sans";
+  src: url('../font/eot/FujitsuSansRegular.eot'), url('../font/FujitsuSansRegular.ttf') format('truetype');
+}
+@font-face {
+  font-family: "Fujitsu Sans Bold";
+  src: url('../font/eot/FujitsuSansBold.eot'), url('../font/FujitsuSansBold.ttf') format('truetype');
+}
+@font-face {
+  font-family: "Fujitsu Sans Medium";
+  src: url('../font/eot/FujitsuSansMedium.eot'), url('../font/FujitsuSansMedium.ttf') format('truetype');
+}
+@font-face {
+  font-family: "Fujitsu Sans Light";
+  src: url('../font/eot/FujitsuSansLight.eot'), url('../font/FujitsuSansLight.ttf') format('truetype');
+}
+
+/******************************
  * 標準タグスタイル
 ******************************/
 *{
@@ -52,7 +73,7 @@ body{
   background-color: @color-bg-default;
   line-height: 1;
   font-size: @font-size-medium;
-  font-family: Sans-serif;
+  font-family: "Hiragino Kaku Gothic ProN","メイリオ", sans-serif;
   font-weight: 300;
   color: @color-text-default;
   -webkit-text-size-adjust: 100%;
@@ -141,10 +162,9 @@ select{
 body{
   display: flex;
   flex-direction: column;
-  
 }
 .moui-systemheader{
-  height: 90px;
+  min-height: 90px;
   z-index: 1001;
 }
 .moui-contents-wrapper{
@@ -155,6 +175,10 @@ body{
 /******************************
  * 共通スタイル
 ******************************/
+body{
+  background: linear-gradient(to bottom, #ffffff, #f5faff);
+}
+
 /* ヘッダー */
 .moui-systemheader{
   display: flex;
@@ -162,17 +186,23 @@ body{
   align-items: flex-end;
   padding: @margin-medium @margin-large;
   
-  box-shadow: @box-shadow;
+  /*border-bottom: 3px solid #4b6980;*/
   
   .moui-systemtitle{
     flex-grow: 3;
+    margin-bottom: 1px;
     
     h1{
-      font-size: 3.6rem;
+      font-family: "Fujitsu Sans";
+      font-size: 4.5rem;
+      letter-spacing: 0.3rem;
+      color: #4c7799;
     }
   }
   
   .moui-subinformation{
+    
+    margin-bottom: 7px;
     
     ul{
       display: flex;
@@ -180,49 +210,76 @@ body{
     }
     
     ul > li{
-     display: flex;
+      display: flex;
+      margin-right: @margin-xlarge;
+    }
+    ul > li:last-child{
+      margin-right: 0;
     }
     
     .moui-dropdownmenu{
       ul{
         display: none;
-        
-        li{
-          
-        }
       }
     }
   }
   .moui-fujitsulogo{
-    
+    margin-left: 50px;
   }
 }
 
-/* サービスメニュー */
-.moui-servicemenu{
-  
-  
-}
 
 .moui-contents-wrapper{
   display: flex;
   flex-direction: row;
-  align-items: flex-start;
+  padding: @margin-medium;
   
-  background-color: #fdfdfd;
+  /*background-color: #f4f4f4;*/
   
+  /* サービスメニュー */
   .moui-servicemenu{
-    width: 200px;
-    margin: @margin-large 0 @margin-large @margin-large;
-    padding: @margin-medium;
-    border-radius: @radius;
-    box-shadow: @box-shadow;
-  
-    .moui-favorites{
-      display: block;
+    width: 300px;
+    overflow-y: auto;
+    
+    /*background-color: #e9edf0;*/
+    
+    .moui-menusection{
+      margin-bottom: @margin-large;
     }
-    .moui-category{
+    .moui-menusection:last-child{
+      margin-bottom: 0;
+    }
+    
+    .moui-title{
+      margin: @margin-xlarge @margin-large @margin-medium @margin-large;
+      font-weight: bold;
+      color: #525d66;
+    }
+    
+    ul.moui-menulist, ul.moui-menucategory{
+    }
+    
+    ul.moui-menulist > li{
+      
+    }
+    ul.moui-menulist > li > a{
       display: block;
+      margin-left: @margin-large;
+      padding: @margin-medium;
+      border-top: 1px solid #b7babd;
+      text-decoration: none;
+      color: #3d464d;
+    }
+    ul.moui-menulist > li:last-child > a{
+      border-bottom: 1px solid #b7babd;
+    }
+    ul.moui-menulist > li > a:hover{
+      background-color: #d1e2f0;
+    }
+    ul.moui-menulist > li.moui-current > a{
+      background-color: #59acf0;
+      font-weight: bold;
+      color: #ffffff;
     }
   }
   .moui-maincontents{
@@ -240,6 +297,7 @@ main.moui-dashboard{
   
   .moui-module{
     margin-bottom: @margin-large;
+    background-color: #ffffff;
   }
   .moui-module:last-child{
     margin-bottom: 0;
@@ -247,25 +305,17 @@ main.moui-dashboard{
   .moui-notice{
     padding: @margin-medium;
     order: 1;
-    
-    border: 1px solid;
   }
   .moui-minicalendar{
     padding: @margin-medium;
     order: 2;
-    
-    border: 1px solid;
   }
   .moui-workovertime{
     padding: @margin-medium;
     order: 3;
-    
-    border: 1px solid;
   }
   .moui-application{
     padding: @margin-medium;
     order: 4;
-    
-    border: 1px solid;
   }
 }
