@@ -8,6 +8,7 @@
 ******************************/
 /* 共通 */
 /* 配色 */
+/* 装飾 */
 /******************************
  * 標準タグスタイル
 ******************************/
@@ -107,9 +108,11 @@ body {
 }
 .moui-systemheader {
   height: 90px;
+  z-index: 1001;
 }
 .moui-contents-wrapper {
   flex-grow: 1;
+  z-index: 1000;
 }
 /******************************
  * 共通スタイル
@@ -120,7 +123,7 @@ body {
   flex-direction: row;
   align-items: flex-end;
   padding: 10px 20px;
-  border: 1px solid;
+  box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.2);
 }
 .moui-systemheader .moui-systemtitle {
   flex-grow: 3;
@@ -139,25 +142,24 @@ body {
   display: none;
 }
 /* サービスメニュー */
-.moui-servicemenu {
-  border: 1px solid;
-}
-.moui-servicemenu .moui-favorites {
-  display: block;
-}
-.moui-servicemenu .moui-category {
-  display: block;
-}
 .moui-contents-wrapper {
   display: flex;
   flex-direction: row;
-  border: 1px solid;
+  align-items: flex-start;
+  background-color: #fdfdfd;
 }
 .moui-contents-wrapper .moui-servicemenu {
   width: 200px;
   margin: 20px 0 20px 20px;
   padding: 10px;
-  border: 1px solid;
+  border-radius: 3px;
+  box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.2);
+}
+.moui-contents-wrapper .moui-servicemenu .moui-favorites {
+  display: block;
+}
+.moui-contents-wrapper .moui-servicemenu .moui-category {
+  display: block;
 }
 .moui-contents-wrapper .moui-maincontents {
   flex-grow: 1;
