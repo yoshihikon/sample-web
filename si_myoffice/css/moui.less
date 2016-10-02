@@ -27,14 +27,35 @@
 @font-family: "Hiragino Kaku Gothic ProN","メイリオ", sans-serif;
 
 /* 配色 */
-@color-bg-default: #ffffff;
-@color-border-default: #b7babd;
+@color-base: #ffffff;
+@color-main: #e2eaf1;
+@color-accent: #006cbf;
+@color-accent-highlight: #2b8ed9;
+@color-accent-lighter: #aad3f2;
+@color-accent-darker: #17181a;
+@color-emphasis: #ffb400;
+@color-emphasis-lighter: #ffd980;
 
-@color-text-default: #222222;
-@color-text-link: #0088cc;
-@color-text-hover: #00aaff;
+@color-bg-default: @color-base;
+@color-border-default: @color-main;
 
+@color-text-systemtitle: @color-accent;
+@color-text-title: @color-accent;
+@color-text-default: @color-accent-darker;
+@color-text-link: @color-accent;
+@color-text-hover: @color-accent-highlight;
+@color-text-active: @color-accent;
 
+@color-menu-bg-default: @color-base;
+@color-menu-bg-selected: @color-accent;
+@color-menu-bg-hover: @color-accent-lighter;
+@color-menu-text-default: @color-accent-darker;
+@color-menu-text-selected: @color-base;
+
+@color-module-bg: @color-main;
+@color-notice-list-bg-default: @color-base;
+@color-notice-list-border-default: @color-main;
+@color-approval-list-member: @color-accent;
 
 /* 装飾 */
 @radius: 3px;
@@ -103,7 +124,7 @@ a:hover {
   color: @color-text-hover;
 }
 a:active {
-  color: @color-text-hover;
+  color: @color-text-active;
 }
 a.fbui-touch{
   -webkit-tap-highlight-color: rgba(0,0,0,0) !important;
@@ -182,7 +203,7 @@ select{
 body{
   display: flex;
   flex-direction: column;
-  background: linear-gradient(to bottom, #ffffff, #f5faff);
+  background: linear-gradient(to bottom, #ffffff 0%, #ffffff 70%, #f5faff 100%);
 }
 
 /* ヘッダー */
@@ -201,7 +222,7 @@ body{
       font-family: "Fujitsu Sans";
       font-size: 4.5rem;
       letter-spacing: 0.3rem;
-      color: #4c7799;
+      color: @color-text-systemtitle;
     }
   }
   .moui-quicksearch{
@@ -248,6 +269,7 @@ body{
   
   /* サービスメニュー */
   .moui-servicemenu{
+    min-width: 320px;
     margin-right: calc(@margin-large - 12px);
     padding-right: 12px;
     overflow-y: auto;
@@ -257,16 +279,16 @@ body{
     }
     
     .moui-menusection{
-      margin-bottom: @margin-medium;
+      margin-bottom: @margin-large;
     }
     .moui-menusection:last-child{
       margin-bottom: 0;
     }
     
     .moui-title{
-      margin-bottom: @margin-medium;
+      margin-bottom: @margin-small;
       font-weight: bold;
-      color: #525d66;
+      color: @color-text-title;
     }
     
     ul.moui-menulist > li{
@@ -280,52 +302,52 @@ body{
       background-position: 10px center;
       background-size: 18px;
       text-decoration: none;
-      color: #3d464d;
+      color: @color-menu-text-default;
     }
     ul.moui-menulist > li:last-child > a{
       border-bottom: 1px solid @color-border-default;
     }
     ul.moui-menulist > li > a:hover{
-      background-color: #d1e2f0;
+      background-color: @color-menu-bg-hover;
     }
     ul.moui-menulist > li > a:active{
-      background-color: #59acf0;
+      background-color: @color-menu-bg-selected;
     }
-    ul.moui-menulist > li.moui-current > a{
-      background-color: #59acf0;
-      color: #ffffff;
+    ul.moui-menulist > li.moui-selected > a{
+      background-color: @color-menu-bg-selected;
+      color: @color-menu-text-selected;
     }
     
     /* アイコン種別 */
     ul.moui-menulist > li.moui-top a{
       background-image: url('../images/icon/home.svg');
     }
-    ul.moui-menulist > li.moui-top.moui-current a{
+    ul.moui-menulist > li.moui-top.moui-selected a{
       background-image: url('../images/icon/home-selected.svg');
     }
     ul.moui-menulist > li.moui-favorite a{
       background-image: url('../images/icon/tag.svg');
     }
-    ul.moui-menulist > li.moui-favorite.moui-current a{
+    ul.moui-menulist > li.moui-favorite.moui-selected a{
       background-image: url('../images/icon/tag-selected.svg');
     }
     ul.moui-menulist > li.moui-all a{
       background-image: url('../images/icon/list.svg');
     }
-    ul.moui-menulist > li.moui-all.moui-current a{
+    ul.moui-menulist > li.moui-all.moui-selected a{
       background-image: url('../images/icon/list-selected.svg');
     }
     ul.moui-menulist > li.moui-sequence a{
       background-image: url('../images/icon/archive.svg');
     }
-    ul.moui-menulist > li.moui-sequence.moui-current a{
+    ul.moui-menulist > li.moui-sequence.moui-selected a{
       background-image: url('../images/icon/archive-selected.svg');
     }
     ul.moui-menulist > li.moui-evaluation a{
       background-image: url('../images/icon/star.svg');
       background-size: 20px;
     }
-    ul.moui-menulist > li.moui-evaluation.moui-current a{
+    ul.moui-menulist > li.moui-evaluation.moui-selected a{
       background-image: url('../images/icon/star-selected.svg');
       background-size: 20px;
     }
@@ -334,19 +356,19 @@ body{
       background-position: 12px center;
       background-size: 16px;
     }
-    ul.moui-menulist > li.moui-inquiry.moui-current a{
+    ul.moui-menulist > li.moui-inquiry.moui-selected a{
       background-image: url('../images/icon/document2-selected.svg');
     }
     ul.moui-menulist > li.moui-settings a{
       background-image: url('../images/icon/gear.svg');
     }
-    ul.moui-menulist > li.moui-settings.moui-current a{
+    ul.moui-menulist > li.moui-settings.moui-selected a{
       background-image: url('../images/icon/gear-selected.svg');
     }
     ul.moui-menulist > li.moui-help a{
       background-image: url('../images/icon/question.svg');
     }
-    ul.moui-menulist > li.moui-help.moui-current a{
+    ul.moui-menulist > li.moui-help.moui-selected a{
       background-image: url('../images/icon/question-selected.svg');
     }
   }
@@ -377,8 +399,9 @@ main.moui-top{
       font-size:  @font-size-large;
     }
     .moui-contents{
-      background-color: #e1ebf2;
-      padding: @margin-small;
+      padding: @margin-thin;
+      border-radius: @radius;
+      background-color: @color-module-bg;
     }
   }
   .moui-module:last-child{
@@ -393,7 +416,7 @@ main.moui-top{
       align-items: center;
       padding: @margin-small;
       border-radius: @radius;
-      background-color: #e1ebf2;
+      background-color: @color-emphasis-lighter;
     }
     h3{
       display: inline-block;
@@ -407,6 +430,41 @@ main.moui-top{
     
     h3{
       background-image: url('../images/icon/warning-selected.svg');
+    }
+    .moui-contents{
+      ul{
+      }
+      ul > li{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding: @margin-small;
+        border-bottom: 1px dotted @color-notice-list-border-default;
+        background-color: @color-notice-list-bg-default;
+        
+        time{
+          margin-right: @margin-medium;
+        }
+        .moui-date{
+          margin-right: @margin-small;
+          letter-spacing: 0.1rem;
+        }
+        .moui-time{
+          letter-spacing: 0.1rem;
+        }
+        .moui-text{
+          flex-grow: 1;
+          word-break: break-all;
+          -webkit-user-select: auto;
+        }
+        .moui-action{
+          min-width: 100px;
+          text-align: right;
+        }
+      }
+      ul > li:last-child{
+        border-bottom: none;
+      }
     }
   }
   .moui-minicalendar{
@@ -426,11 +484,104 @@ main.moui-top{
     h3{
       background-image: url('../images/icon/archive.svg');
     }
+    .moui-contents{
+      ul{
+      }
+      ul > li{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding: @margin-small;
+        border-bottom: 1px dotted @color-notice-list-border-default;
+        background-color: @color-notice-list-bg-default;
+        
+        time{
+          margin-right: @margin-medium;
+        }
+        .moui-date{
+          margin-right: @margin-small;
+          letter-spacing: 0.1rem;
+        }
+        .moui-time{
+          letter-spacing: 0.1rem;
+        }
+        .moui-text{
+          flex-grow: 1;
+          word-break: break-all;
+          -webkit-user-select: auto;
+        }
+        .moui-stage{
+          display: inline-block;
+          min-width: 100px;
+          margin: -4px 0;
+          padding: 2px 0 2px 20px;
+          background-image: url('../images/icon/person.svg');
+          background-repeat: no-repeat;
+          background-position: left center;
+          background-size: 16px;
+          text-align: left;
+        }
+        .moui-action{
+          min-width: 100px;
+          text-align: right;
+        }
+      }
+      ul > li:last-child{
+        border-bottom: none;
+      }
+    }
   }
   .moui-approval{
     
     h3{
       background-image: url('../images/icon/inbox.svg');
+    }
+    .moui-contents{
+      ul{
+      }
+      ul > li{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding: @margin-small;
+        border-bottom: 1px dotted @color-notice-list-border-default;
+        background-color: @color-notice-list-bg-default;
+        
+        time{
+          margin-right: @margin-medium;
+        }
+        .moui-date{
+          margin-right: @margin-small;
+          letter-spacing: 0.1rem;
+        }
+        .moui-time{
+          letter-spacing: 0.1rem;
+        }
+        .moui-member{
+          display: inline-block;
+          width: 100px;
+          margin-right: @margin-medium;
+          margin: -4px 0;
+          padding: 2px 0 2px 20px;
+          background-image: url('../images/icon/person-emphasis.svg');
+          background-repeat: no-repeat;
+          background-position: left center;
+          background-size: 16px;
+          color: @color-approval-list-member;
+        }
+        .moui-text{
+          flex-grow: 1;
+          word-break: break-all;
+          -webkit-user-select: auto;
+        }
+        .moui-action{
+          min-width: 100px;
+          text-align: right;
+        }
+      }
+      ul > li:last-child{
+        border-bottom: none;
+      }
     }
   }
 }
