@@ -748,7 +748,8 @@ THREE.OBJLoader.prototype = {
       if(container.children[i].parentlink != undefined){
         
         var childObject = container.children[i];
-        var parentObject = getObject(container, childObject.parentlink);
+        
+        var parentObject = container.getObjectByName(childObject.parentlink);
         parentObject.add(childObject);
         
         i--;

@@ -110,7 +110,7 @@ body {
       console.log(containerObject);
       
       //objファイルの中の"Cube"にアクセス
-      var cube = getObject(containerObject, "Cube1");
+      var cube = containerObject.getObjectByName("Cube1");
       cube.position.y = 5;
       
     }, onProgress, onError );
@@ -149,26 +149,17 @@ body {
     
     controls.update();  
     
-    var cube = getObject(containerObject, "Cube1");
-    if(cube != null){
+    if(containerObject != null){
+      var cube = containerObject.getObjectByName("Cube1");
       cube.rotation.y += 1*Math.PI/180;
     }
     
-    renderer.render( scene, camera );
-  }
-  
-  function getObject(container, name){
-    if(container == undefined || container.children == undefined){
-      return null;
+    if(cube != null){
+      var cube2 = containerObject.getObjectByName("Cube2");
+      cube2.rotation.y += 1*Math.PI/180;
     }
     
-    var count = container.children.length;
-    for(var i=0; i < count; i++){
-      if(container.children[i].name == name){
-        return container.children[i];
-      }
-    }
-    return null;
+    renderer.render( scene, camera );
   }
   
 </script>
