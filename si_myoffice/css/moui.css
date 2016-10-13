@@ -249,32 +249,32 @@ body {
   background-image: url('../images/icon/home.svg');
 }
 .moui-maincontents-wrapper .moui-servicemenu ul.moui-menulist > li.moui-top.moui-selected a {
-  background-image: url('../images/icon/home-selected.svg');
+  background-image: url('../images/icon/home_selected.svg');
 }
 .moui-maincontents-wrapper .moui-servicemenu ul.moui-menulist > li.moui-favorite a {
   background-image: url('../images/icon/tag.svg');
 }
 .moui-maincontents-wrapper .moui-servicemenu ul.moui-menulist > li.moui-favorite.moui-selected a {
-  background-image: url('../images/icon/tag-selected.svg');
+  background-image: url('../images/icon/tag_selected.svg');
 }
 .moui-maincontents-wrapper .moui-servicemenu ul.moui-menulist > li.moui-all a {
   background-image: url('../images/icon/list.svg');
 }
 .moui-maincontents-wrapper .moui-servicemenu ul.moui-menulist > li.moui-all.moui-selected a {
-  background-image: url('../images/icon/list-selected.svg');
+  background-image: url('../images/icon/list_selected.svg');
 }
 .moui-maincontents-wrapper .moui-servicemenu ul.moui-menulist > li.moui-sequence a {
   background-image: url('../images/icon/archive.svg');
 }
 .moui-maincontents-wrapper .moui-servicemenu ul.moui-menulist > li.moui-sequence.moui-selected a {
-  background-image: url('../images/icon/archive-selected.svg');
+  background-image: url('../images/icon/archive_selected.svg');
 }
 .moui-maincontents-wrapper .moui-servicemenu ul.moui-menulist > li.moui-evaluation a {
   background-image: url('../images/icon/star.svg');
   background-size: 20px;
 }
 .moui-maincontents-wrapper .moui-servicemenu ul.moui-menulist > li.moui-evaluation.moui-selected a {
-  background-image: url('../images/icon/star-selected.svg');
+  background-image: url('../images/icon/star_selected.svg');
   background-size: 20px;
 }
 .moui-maincontents-wrapper .moui-servicemenu ul.moui-menulist > li.moui-inquiry a {
@@ -283,19 +283,27 @@ body {
   background-size: 16px;
 }
 .moui-maincontents-wrapper .moui-servicemenu ul.moui-menulist > li.moui-inquiry.moui-selected a {
-  background-image: url('../images/icon/document2-selected.svg');
+  background-image: url('../images/icon/document2_selected.svg');
+}
+.moui-maincontents-wrapper .moui-servicemenu ul.moui-menulist > li.moui-history a {
+  background-image: url('../images/icon/albums.svg');
+  background-position: 12px center;
+  background-size: 16px;
+}
+.moui-maincontents-wrapper .moui-servicemenu ul.moui-menulist > li.moui-history.moui-selected a {
+  background-image: url('../images/icon/albums_selected.svg');
 }
 .moui-maincontents-wrapper .moui-servicemenu ul.moui-menulist > li.moui-settings a {
   background-image: url('../images/icon/gear.svg');
 }
 .moui-maincontents-wrapper .moui-servicemenu ul.moui-menulist > li.moui-settings.moui-selected a {
-  background-image: url('../images/icon/gear-selected.svg');
+  background-image: url('../images/icon/gear_selected.svg');
 }
 .moui-maincontents-wrapper .moui-servicemenu ul.moui-menulist > li.moui-help a {
   background-image: url('../images/icon/question.svg');
 }
 .moui-maincontents-wrapper .moui-servicemenu ul.moui-menulist > li.moui-help.moui-selected a {
-  background-image: url('../images/icon/question-selected.svg');
+  background-image: url('../images/icon/question_selected.svg');
 }
 .moui-maincontents-wrapper .moui-maincontents {
   flex-grow: 1;
@@ -307,6 +315,7 @@ body {
 main.moui-top {
   display: flex;
   flex-direction: column;
+  padding-right: 12px;
 }
 main.moui-top .moui-module {
   margin-bottom: 20px;
@@ -345,7 +354,7 @@ main.moui-top .moui-transportation h3 {
   background-size: 18px;
 }
 main.moui-top .moui-notice h3 {
-  background-image: url('../images/icon/warning-selected.svg');
+  background-image: url('../images/icon/warning.svg');
 }
 main.moui-top .moui-notice .moui-contents ul > li {
   display: flex;
