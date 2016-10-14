@@ -47,10 +47,10 @@
 @color-text-active: @color-accent;
 
 @color-menu-bg-default: @color-base;
-@color-menu-bg-selected: @color-accent;
+@color-menu-bg_selected: @color-accent;
 @color-menu-bg-hover: @color-accent-lighter;
 @color-menu-text-default: @color-accent-darker;
-@color-menu-text-selected: @color-base;
+@color-menu-text_selected: @color-base;
 
 @color-module-bg: @color-main;
 @color-notice-list-bg-default: @color-base;
@@ -311,11 +311,11 @@ body{
       background-color: @color-menu-bg-hover;
     }
     ul.moui-menulist > li > a:active{
-      background-color: @color-menu-bg-selected;
+      background-color: @color-menu-bg_selected;
     }
     ul.moui-menulist > li.moui-selected > a{
-      background-color: @color-menu-bg-selected;
-      color: @color-menu-text-selected;
+      background-color: @color-menu-bg_selected;
+      color: @color-menu-text_selected;
     }
     
     /* アイコン種別 */
@@ -323,32 +323,32 @@ body{
       background-image: url('../images/icon/home.svg');
     }
     ul.moui-menulist > li.moui-top.moui-selected a{
-      background-image: url('../images/icon/home-selected.svg');
+      background-image: url('../images/icon/home_selected.svg');
     }
     ul.moui-menulist > li.moui-favorite a{
       background-image: url('../images/icon/tag.svg');
     }
     ul.moui-menulist > li.moui-favorite.moui-selected a{
-      background-image: url('../images/icon/tag-selected.svg');
+      background-image: url('../images/icon/tag_selected.svg');
     }
     ul.moui-menulist > li.moui-all a{
       background-image: url('../images/icon/list.svg');
     }
     ul.moui-menulist > li.moui-all.moui-selected a{
-      background-image: url('../images/icon/list-selected.svg');
+      background-image: url('../images/icon/list_selected.svg');
     }
     ul.moui-menulist > li.moui-sequence a{
       background-image: url('../images/icon/archive.svg');
     }
     ul.moui-menulist > li.moui-sequence.moui-selected a{
-      background-image: url('../images/icon/archive-selected.svg');
+      background-image: url('../images/icon/archive_selected.svg');
     }
     ul.moui-menulist > li.moui-evaluation a{
       background-image: url('../images/icon/star.svg');
       background-size: 20px;
     }
     ul.moui-menulist > li.moui-evaluation.moui-selected a{
-      background-image: url('../images/icon/star-selected.svg');
+      background-image: url('../images/icon/star_selected.svg');
       background-size: 20px;
     }
     ul.moui-menulist > li.moui-inquiry a{
@@ -357,19 +357,27 @@ body{
       background-size: 16px;
     }
     ul.moui-menulist > li.moui-inquiry.moui-selected a{
-      background-image: url('../images/icon/document2-selected.svg');
+      background-image: url('../images/icon/document2_selected.svg');
+    }
+    ul.moui-menulist > li.moui-history a{
+      background-image: url('../images/icon/albums.svg');
+      background-position: 12px center;
+      background-size: 16px;
+    }
+    ul.moui-menulist > li.moui-history.moui-selected a{
+      background-image: url('../images/icon/albums_selected.svg');
     }
     ul.moui-menulist > li.moui-settings a{
       background-image: url('../images/icon/gear.svg');
     }
     ul.moui-menulist > li.moui-settings.moui-selected a{
-      background-image: url('../images/icon/gear-selected.svg');
+      background-image: url('../images/icon/gear_selected.svg');
     }
     ul.moui-menulist > li.moui-help a{
       background-image: url('../images/icon/question.svg');
     }
     ul.moui-menulist > li.moui-help.moui-selected a{
-      background-image: url('../images/icon/question-selected.svg');
+      background-image: url('../images/icon/question_selected.svg');
     }
   }
   
@@ -386,6 +394,8 @@ body{
 main.moui-top{
   display: flex;
   flex-direction: column;
+  
+  padding-right: 12px;
   
   .moui-module{
     margin-bottom: @margin-medium;
@@ -429,7 +439,7 @@ main.moui-top{
   .moui-notice{
     
     h3{
-      background-image: url('../images/icon/warning-selected.svg');
+      background-image: url('../images/icon/warning.svg');
     }
     .moui-contents{
       ul{
@@ -537,6 +547,7 @@ main.moui-top{
       background-image: url('../images/icon/inbox.svg');
     }
     .moui-contents{
+      
       ul{
       }
       ul > li{
