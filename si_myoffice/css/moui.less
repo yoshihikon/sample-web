@@ -52,10 +52,28 @@
 @color-menu-text-default: @color-accent-darker;
 @color-menu-text_selected: @color-base;
 
+@color-accordion-contents-bg: #ebf3fa;
+
 @color-module-bg: @color-main;
 @color-notice-list-bg-default: @color-base;
 @color-notice-list-border-default: @color-main;
 @color-approval-list-member: @color-accent;
+@color-workovertime-bg: @color-base;
+
+@color-calendar-bg: @color-base;
+@color-calendar-bg-today: #faebeb;
+@color-calendar-bg-othermonth: #dee5ec;
+@color-calendar-border-default: #ebf3fa;
+@color-calendar-border-today: #bf0000;
+@color-calendar-text-sat: #006cbf;
+@color-calendar-text-sun: #bf0000;
+@color-calendar-item-error-bg: #bf0000;
+@color-calendar-item-error-text: #ffffff;
+@color-calendar-item-expense-bg: #006cbf;
+@color-calendar-item-expense-text: #ffffff;
+@color-calendar-item-rest-bg: #79bf00;
+@color-calendar-item-rest-text: #ffffff;
+
 
 /* 装飾 */
 @radius: 3px;
@@ -271,7 +289,7 @@ body{
   .moui-servicemenu{
     min-width: 320px;
     margin-right: calc(@margin-large - 12px);
-    padding-right: 12px;
+    padding: 0 12px 100px 0;
     overflow-y: auto;
     
     .moui-searchsection{
@@ -291,95 +309,154 @@ body{
       color: @color-text-title;
     }
     
+    ul.moui-menulist {
+      a,span{
+        display: block;
+        padding: @margin-small @margin-small @margin-small 40px;
+        background-image: url('../images/icon/document1.svg');
+        background-repeat: no-repeat;
+        background-position: 10px center;
+        background-size: 18px;
+        text-decoration: none;
+        color: @color-menu-text-default;
+      }
+      a:hover{
+        background-color: @color-menu-bg-hover;
+      }
+      a:active{
+        background-color: @color-menu-bg_selected;
+      }
+      a.moui-selected{
+        background-color: @color-menu-bg_selected;
+        color: @color-menu-text_selected;
+      }
+
+      /* アイコン種別 */
+      .moui-top{
+        background-image: url('../images/icon/home.svg');
+      }
+      .moui-top.moui-selected{
+        background-image: url('../images/icon/home_selected.svg');
+      }
+      .moui-favorite{
+        background-image: url('../images/icon/tag.svg');
+      }
+      .moui-favorite.moui-selected{
+        background-image: url('../images/icon/tag_selected.svg');
+      }
+      .moui-all{
+        background-image: url('../images/icon/list.svg');
+      }
+      .moui-all.moui-selected{
+        background-image: url('../images/icon/list_selected.svg');
+      }
+      .moui-sequence{
+        background-image: url('../images/icon/archive.svg');
+      }
+      .moui-sequence.moui-selected{
+        background-image: url('../images/icon/archive_selected.svg');
+      }
+      .moui-evaluation{
+        background-image: url('../images/icon/star.svg');
+        background-size: 20px;
+      }
+      .moui-evaluation.moui-selected{
+        background-image: url('../images/icon/star_selected.svg');
+        background-size: 20px;
+      }
+      .moui-inquiry{
+        background-image: url('../images/icon/document2.svg');
+        background-position: 12px center;
+        background-size: 16px;
+      }
+      .moui-inquiry.moui-selected{
+        background-image: url('../images/icon/document2_selected.svg');
+      }
+      .moui-history{
+        background-image: url('../images/icon/albums.svg');
+        background-position: 12px center;
+        background-size: 16px;
+      }
+      .moui-history.moui-selected{
+        background-image: url('../images/icon/albums_selected.svg');
+      }
+      .moui-settings{
+        background-image: url('../images/icon/gear.svg');
+      }
+      .moui-settings.moui-selected{
+        background-image: url('../images/icon/gear_selected.svg');
+      }
+      .moui-help{
+        background-image: url('../images/icon/question.svg');
+      }
+      .moui-help.moui-selected{
+        background-image: url('../images/icon/question_selected.svg');
+      }
+      
+      /* アコーディオン */
+      .moui-accordion{
+        .moui-accordion-title{
+          position: relative;
+          display: block;
+        }
+        .moui-accordion-title .moui-accordion-mark{
+          position: absolute;
+          top: 50%;
+          right: 8px;
+          display: block;
+          width: 24px;
+          height: 24px;
+          margin-top: -12px;
+          padding: 0;
+          background-image: url('../images/icon/arrow-right.svg');
+          background-repeat: no-repeat;
+          background-size: 8px;
+        }
+        .moui-accordion-title.moui-close .moui-accordion-mark{
+          -webkit-transition: 0.2s ease-in-out;
+          -webkit-transform: rotate(0);
+        }
+        .moui-accordion-title.moui-open .moui-accordion-mark{
+          -webkit-transition: 0.2s ease-in-out;
+          -webkit-transform: rotate(90deg);
+        }
+        
+        .moui-accordion-title:hover{
+          background-color: @color-menu-bg-hover;
+          cursor: pointer;
+        }
+        .moui-accordion-title:active{
+          background-color: @color-menu-bg_selected;
+        }
+
+        .moui-accordion-contents{
+          
+          margin-bottom: @margin-small;
+          
+          .moui-category-title{
+            margin: @margin-small 0 @margin-thin @margin-medium;
+            font-weight: bold;
+          }
+          ul{
+            
+          }
+          ul > li{
+            margin-left: @margin-medium;
+            border-top: 1px solid @color-border-default;
+          }
+        }
+      }
+      
+    }
     ul.moui-menulist > li{
-    }
-    ul.moui-menulist > li > a{
-      display: block;
-      padding: @margin-small @margin-small @margin-small 40px;
       border-top: 1px solid @color-border-default;
-      background-image: url('../images/icon/document1.svg');
-      background-repeat: no-repeat;
-      background-position: 10px center;
-      background-size: 18px;
-      text-decoration: none;
-      color: @color-menu-text-default;
     }
-    ul.moui-menulist > li:last-child > a{
+    ul.moui-menulist > li:last-child{
       border-bottom: 1px solid @color-border-default;
     }
-    ul.moui-menulist > li > a:hover{
-      background-color: @color-menu-bg-hover;
-    }
-    ul.moui-menulist > li > a:active{
-      background-color: @color-menu-bg_selected;
-    }
-    ul.moui-menulist > li.moui-selected > a{
-      background-color: @color-menu-bg_selected;
-      color: @color-menu-text_selected;
-    }
-    
-    /* アイコン種別 */
-    ul.moui-menulist > li.moui-top a{
-      background-image: url('../images/icon/home.svg');
-    }
-    ul.moui-menulist > li.moui-top.moui-selected a{
-      background-image: url('../images/icon/home_selected.svg');
-    }
-    ul.moui-menulist > li.moui-favorite a{
-      background-image: url('../images/icon/tag.svg');
-    }
-    ul.moui-menulist > li.moui-favorite.moui-selected a{
-      background-image: url('../images/icon/tag_selected.svg');
-    }
-    ul.moui-menulist > li.moui-all a{
-      background-image: url('../images/icon/list.svg');
-    }
-    ul.moui-menulist > li.moui-all.moui-selected a{
-      background-image: url('../images/icon/list_selected.svg');
-    }
-    ul.moui-menulist > li.moui-sequence a{
-      background-image: url('../images/icon/archive.svg');
-    }
-    ul.moui-menulist > li.moui-sequence.moui-selected a{
-      background-image: url('../images/icon/archive_selected.svg');
-    }
-    ul.moui-menulist > li.moui-evaluation a{
-      background-image: url('../images/icon/star.svg');
-      background-size: 20px;
-    }
-    ul.moui-menulist > li.moui-evaluation.moui-selected a{
-      background-image: url('../images/icon/star_selected.svg');
-      background-size: 20px;
-    }
-    ul.moui-menulist > li.moui-inquiry a{
-      background-image: url('../images/icon/document2.svg');
-      background-position: 12px center;
-      background-size: 16px;
-    }
-    ul.moui-menulist > li.moui-inquiry.moui-selected a{
-      background-image: url('../images/icon/document2_selected.svg');
-    }
-    ul.moui-menulist > li.moui-history a{
-      background-image: url('../images/icon/albums.svg');
-      background-position: 12px center;
-      background-size: 16px;
-    }
-    ul.moui-menulist > li.moui-history.moui-selected a{
-      background-image: url('../images/icon/albums_selected.svg');
-    }
-    ul.moui-menulist > li.moui-settings a{
-      background-image: url('../images/icon/gear.svg');
-    }
-    ul.moui-menulist > li.moui-settings.moui-selected a{
-      background-image: url('../images/icon/gear_selected.svg');
-    }
-    ul.moui-menulist > li.moui-help a{
-      background-image: url('../images/icon/question.svg');
-    }
-    ul.moui-menulist > li.moui-help.moui-selected a{
-      background-image: url('../images/icon/question_selected.svg');
-    }
   }
+  
+  
   
   /* メインコンテンツ */
   .moui-maincontents{
@@ -395,7 +472,7 @@ main.moui-top{
   display: flex;
   flex-direction: column;
   
-  padding-right: 12px;
+  padding: 0 12px 100px 0;
   
   .moui-module{
     margin-bottom: @margin-medium;
@@ -477,18 +554,144 @@ main.moui-top{
       }
     }
   }
-  .moui-minicalendar{
+  .moui-calendar{
     
     h3{
       background-image: url('../images/icon/checkmark.svg');
     }
+    
+    .moui-contents{
+      h4{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+        padding: @margin-small;
+        text-align: center;
+        font-size: @font-size-large;
+        
+        .moui-prevmonth{
+          display: inline-block;
+          padding: @margin-thin @margin-medium;
+          text-decoration: none;
+        }
+        .moui-prevmonth:hover{
+          background-color: #ffffff;
+          border-radius: @radius;
+          opacity: 0.7;
+        }
+        .moui-currentmonth{
+          display: inline-block;
+          margin: 0 @margin-medium;
+        }
+        .moui-nextmonth{
+          display: inline-block;
+          padding: @margin-thin @margin-medium;
+          text-decoration: none;
+        }
+        .moui-nextmonth:hover{
+          background-color: #ffffff;
+          border-radius: @radius;
+          opacity: 0.7;
+        }
+      }
+      ul.moui-calendar-label{
+        display: table;
+        table-layout: fixed;
+        width: 100%;
+      }
+      ul.moui-calendar-label > li{
+        display: table-cell;
+        padding: @margin-thin;
+        border: 1px solid @color-calendar-border-default;
+        background-color: @color-calendar-bg;
+        text-align: center;
+        font-weight: bold;
+      }
+      ul.moui-calendar-label > li:nth-child(6){
+        color: @color-calendar-text-sat;
+      }
+      ul.moui-calendar-label > li:nth-child(7){
+        color: @color-calendar-text-sun;
+      }
+      ul.moui-calendar-contents{
+        display: table;
+        table-layout: fixed;
+        width: 100%;
+      }
+      ul.moui-calendar-contents > li{
+        display: table-cell;
+        height: 60px;
+        padding: @margin-thin;
+        border: 1px solid @color-calendar-border-default;
+        background-color: @color-calendar-bg;
+        
+        .moui-item{
+          display: block;
+          margin: @margin-thin 0;
+          padding: @margin-thin;
+          border-radius: @radius;
+          text-align: center;
+          text-decoration: none;
+          font-size: @font-size-small;
+        }
+        .moui-item:hover{
+          opacity: 0.7;
+        }
+        .moui-item-rest{
+          background-color: @color-calendar-item-rest-bg;
+          color: @color-calendar-item-rest-text;
+        }
+        .moui-item-error{
+          background-color: @color-calendar-item-error-bg;
+          color: @color-calendar-item-error-text;
+        }
+        .moui-item-expensebefore{
+          background-color: @color-calendar-item-expense-bg;
+          color: @color-calendar-item-expense-text;
+        }
+      }
+      ul.moui-calendar-contents > li:nth-child(6){
+        color: @color-calendar-text-sat;
+      }
+      ul.moui-calendar-contents > li:nth-child(7){
+        color: @color-calendar-text-sun;
+      }
+      ul.moui-calendar-contents > li.moui-today{
+        border-color: @color-calendar-border-today;
+        background-color: @color-calendar-bg-today;
+      }
+      ul.moui-calendar-contents > li.moui-prevmonth,
+      ul.moui-calendar-contents > li.moui-nextmonth{
+        background-color: @color-calendar-bg-othermonth;
+      }
+    }
   }
+  
   .moui-workovertime{
     
     h3{
       background-image: url('../images/icon/clock.svg');
     }
+    
+    .moui-contents{
+      dl.moui-time{
+        padding: @margin-small;
+        background-color: @color-workovertime-bg;
+        
+        dt{
+          display: inline-block;
+          margin-right: @margin-small;
+        }
+        dd{
+          display: inline-block;
+          margin-right: @margin-medium;
+        }
+      }
+      
+    }
   }
+  
   .moui-application{
     
     h3{
