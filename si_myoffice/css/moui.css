@@ -142,7 +142,6 @@ input[type=search] {
 body {
   display: flex;
   flex-direction: column;
-  background: linear-gradient(to bottom, #ffffff 0%, #ffffff 70%, #f5faff 100%);
 }
 /* ヘッダー */
 .moui-systemheader {
@@ -151,6 +150,7 @@ body {
   align-items: flex-end;
   min-height: 120px;
   padding: 20px 40px;
+  background-color: #006cbf;
 }
 .moui-systemheader .moui-systemtitle {
   flex-grow: 1;
@@ -160,16 +160,7 @@ body {
   font-family: "Fujitsu Sans";
   font-size: 4.5rem;
   letter-spacing: 0.3rem;
-  color: #006cbf;
-}
-.moui-systemheader .moui-quicksearch {
-  flex-grow: 1;
-  display: flex;
-  justify-content: center;
-  margin-bottom: 6px;
-}
-.moui-systemheader .moui-quicksearch input {
-  width: 300px;
+  color: #ffffff;
 }
 .moui-systemheader .moui-lastlogin {
   flex-grow: 1;
@@ -180,18 +171,22 @@ body {
 .moui-systemheader .moui-lastlogin input {
   width: 300px;
 }
-.moui-systemheader .moui-systemmenu {
-  flex-grow: 1;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-  margin-bottom: 7px;
-}
-.moui-systemheader .moui-systemmenu ul.moui-dropdownmenu {
-  display: none;
-}
 .moui-systemheader .moui-fujitsulogo {
   margin-left: 40px;
+}
+.moui-subinformation {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 10px 40px;
+  background-color: #ffffff;
+  box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.2);
+}
+.moui-subinformation .moui-userinformation {
+  flex-grow: 1;
+}
+.moui-subinformation .moui-search {
+  width: 300px;
 }
 .moui-maincontents-wrapper {
   display: flex;
@@ -381,6 +376,7 @@ main.moui-top .moui-module .moui-contents {
   padding: 5px;
   border-radius: 3px;
   background-color: #e2eaf1;
+  box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.2);
 }
 main.moui-top .moui-module:last-child {
   margin-bottom: 0;

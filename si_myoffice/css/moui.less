@@ -39,12 +39,16 @@
 @color-bg-default: @color-base;
 @color-border-default: @color-main;
 
-@color-text-systemtitle: @color-accent;
 @color-text-title: @color-accent;
 @color-text-default: @color-accent-darker;
 @color-text-link: @color-accent;
 @color-text-hover: @color-accent-highlight;
 @color-text-active: @color-accent;
+
+@color-header-bg: @color-accent;
+@color-header-text: @color-base;
+
+@color-userinformation-bg: @color-base;
 
 @color-menu-bg-default: @color-base;
 @color-menu-bg_selected: @color-accent;
@@ -221,7 +225,6 @@ select{
 body{
   display: flex;
   flex-direction: column;
-  background: linear-gradient(to bottom, #ffffff 0%, #ffffff 70%, #f5faff 100%);
 }
 
 /* ヘッダー */
@@ -231,6 +234,7 @@ body{
   align-items: flex-end;
   min-height: 120px;
   padding: @margin-medium @margin-large;
+  background-color: @color-header-bg;
   
   .moui-systemtitle{
     flex-grow: 1;
@@ -240,17 +244,7 @@ body{
       font-family: "Fujitsu Sans";
       font-size: 4.5rem;
       letter-spacing: 0.3rem;
-      color: @color-text-systemtitle;
-    }
-  }
-  .moui-quicksearch{
-    flex-grow: 1;
-    display: flex;
-    justify-content: center;
-    margin-bottom: 6px;
-    
-    input{
-      width: 300px;
+      color: @color-header-text;
     }
   }
   .moui-lastlogin{
@@ -263,22 +257,26 @@ body{
       width: 300px;
     }
   }
-  .moui-systemmenu{
-    flex-grow: 1;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    margin-bottom: 7px;
-    
-    ul.moui-dropdownmenu{
-      display: none;
-    }
-  }
   .moui-fujitsulogo{
     margin-left: @margin-large;
   }
 }
 
+.moui-subinformation{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: @margin-small @margin-large;
+  background-color: @color-userinformation-bg;
+  box-shadow: @box-shadow;
+  
+  .moui-userinformation{
+    flex-grow: 1;
+  }
+  .moui-search{
+    width: 300px;
+  }
+}
 
 .moui-maincontents-wrapper{
   display: flex;
@@ -489,6 +487,7 @@ main.moui-top{
       padding: @margin-thin;
       border-radius: @radius;
       background-color: @color-module-bg;
+      box-shadow: @box-shadow;
     }
   }
   .moui-module:last-child{
@@ -513,8 +512,8 @@ main.moui-top{
       background-size: 18px;
     }
   }
-  .moui-notice{
-    
+  
+  .moui-notice{  
     h3{
       background-image: url('../images/icon/warning.svg');
     }
