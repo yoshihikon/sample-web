@@ -10,6 +10,7 @@
 <script src="./libs/jquery/jquery-3.1.0.min.js" type="text/javascript"></script>
 <script src="./libs/threejs/build/three.min.js" type="text/javascript"></script>
 <script src="./libs/threejs/loaders/OBJRLoader.js" type="text/javascript"></script>
+<script src="./libs/threejs/loaders/MTLLoader.js" type="text/javascript"></script>
 <script src="./libs/threejs/controls/OrbitControls.js" type="text/javascript"></script>
 
 <style>
@@ -83,21 +84,20 @@ body {
     };
     var onError = function ( xhr ) {
     };
-    var loader = new THREE.ImageLoader( manager );
-    loader.load( 'texture/UV_Grid_Sm.jpg', function ( image ) {
-        texture.image = image;
-        texture.needsUpdate = true;
-    } );
-    // model
-    
-    var loader = new THREE.OBJLoader( manager );
-    loader.load( 'model/building_kosugi_161014.obj', function ( object ) {
+    /*
+    var material = new THREE.MeshPhongMaterial({
+          color: 0xffffff, //球の色
+          wireframe: true //ワイヤーフレーム有効
+    });
+    */
+    var mtlLoader = new THREE.MTLLoader();
+    mtlLoader.load( 'model/building_kosugi_161017.mtl', function( materials ) {
       
-      object.traverse( function ( child ) {
-          if ( child instanceof THREE.Mesh ) {
-              child.material.map = texture;
-          }
-      } );
+      materials.preload();
+      
+      var objLoader = new THREE.OBJLoader();
+      objLoader.setMaterials( materials );
+      objLoader.load( 'model/building_kosugi_161017.obj', function ( object ) {
       
       //obj全体にアクセス
       object.position.x = 0;
@@ -107,9 +107,11 @@ body {
       scene.add( object );
       
       containerObject = object;
-      console.log(containerObject);
+
+      }, onProgress, onError );
       
-    }, onProgress, onError );
+    });
+    
     
     renderer = new THREE.WebGLRenderer();
     renderer.setPixelRatio( window.devicePixelRatio );
@@ -144,6 +146,11 @@ body {
     //camera.lookAt( scene.position );
     
     controls.update();  
+    
+    if(containerObject != null){
+      var objb1 = containerObject.getObjectByName("b1");
+      objb1.rotation.y += 1*Math.PI/180;
+    }
     
     renderer.render( scene, camera );
   }

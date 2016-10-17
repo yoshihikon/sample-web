@@ -588,8 +588,12 @@ THREE.OBJLoader.prototype = {
 				// WORKAROUND: https://bugs.chromium.org/p/v8/issues/detail?id=2869
 				// var name = result[ 0 ].substr( 1 ).trim();
 				var name = ( " " + result[ 0 ].substr( 1 ).trim() ).substr( 1 );
-
-				state.startObject( name );
+                
+                var nameArray = name.split("_");
+                
+				state.startObject( nameArray[0].toString() );
+              
+                nameArray = null;
 
 			} else if ( this.regexp.parentlink_name_pattern.test( line ) ) {
 
@@ -744,18 +748,21 @@ THREE.OBJLoader.prototype = {
 
 		//set relationship
 		var count = container.children.length;
-    for(var i=0; i < count; i++){
-      if(container.children[i].parentlink != undefined){
-        
-        var childObject = container.children[i];
-        
-        var parentObject = container.getObjectByName(childObject.parentlink);
-        parentObject.add(childObject);
-        
-        i--;
-        count--;
-      }
-    }
+        for(var i=0; i < count; i++){
+          if(container.children[i].parentlink != undefined){
+
+            var childObject = container.children[i];
+
+            var parentName = childObject.parentlink;
+            
+            var parentObject = container.getObjectByName(childObject.parentlink);
+            if(parentObject != null || parentObject != undefined){
+              parentObject.add(childObject);
+              i--;
+              count--;
+            }
+          }
+        }
 
 		console.timeEnd( 'OBJLoader' );
 
