@@ -8,11 +8,14 @@
 <title>drag&amp;drop sample</title>
 
 <style>
-  .drop{
+  .droparea{
     display: block;
     margin-bottom: 10px;
     padding: 10px;
     background-color: #efefef;
+  }
+  .droparea.enter{
+    background-color: #ffeeee;
   }
   .fileinfo{
     display: block;
@@ -31,21 +34,24 @@
 <script src="./libs/jquery/jquery-3.1.0.min.js" type="text/javascript"></script>
 
 <script>
-$(function(){
-  
-});
-  
 function dragOver( event ){
   // ドロップを受け付ける
   event.preventDefault();
 }
-
+function dragEnter(event){
+  $(".droparea").addClass("enter");
+}
+function dragLeave(event){
+  $(".droparea").removeClass("enter");
+}
 // ドロップ処理
 function drop(event){
   // ページの遷移を防止
   //（これがないとドラッグ内容の文字列へブラウザが遷移する）
   event.preventDefault();
-
+  
+  $(".droparea").removeClass("enter");
+  
   // イベントに格納されたファイルを取り出し
   var f = event.dataTransfer.files[0];
   
@@ -69,7 +75,7 @@ function drop(event){
 </head>
 
 <body>
-  <div class="drop" ondragover="dragOver(event);" ondrop="drop(event)">ここにファイルをドロップしてね</div>
+  <div class="droparea" ondragover="dragOver(event);" ondrop="drop(event)" ondragenter="dragEnter(event)" ondragleave="dragLeave(event)">ここにファイルをドロップしてね</div>
   <div class="fileinfo" ></div>
   <div class="filecontents" ></div>
 </body>
