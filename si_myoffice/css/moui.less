@@ -1,0 +1,862 @@
+/*
+ * My OFFICE moui.css
+ * 2016/9/29
+ */
+
+/******************************
+ * 標準タグスタイル
+******************************/
+/* 共通 */
+@margin-xxlarge: 80px;
+@margin-xlarge: 60px;
+@margin-large: 40px;
+@margin-medium: 20px;
+@margin-small: 10px;
+@margin-thin: 5px;
+
+@boxsize-touch-large: 60px;
+@boxsize-touch-medium: 48px;
+@boxsize-touch-small: 36px;
+
+/* フォント */
+@font-size-large: 2.0rem;
+@font-size-medium: 1.5rem;
+@font-size-small: 1.35rem;
+@font-size-xsmall: 1.2rem;
+
+@font-family: "Hiragino Kaku Gothic ProN","メイリオ", sans-serif;
+
+/* 配色 */
+@color-base: #ffffff;
+@color-main: #e2eaf1;
+@color-accent: #006cbf;
+@color-accent-highlight: #2b8ed9;
+@color-accent-lighter: #aad3f2;
+@color-accent-darker: #17181a;
+@color-emphasis: #ffb400;
+@color-emphasis-lighter: #ffd980;
+
+@color-bg-default: @color-base;
+@color-border-default: @color-main;
+
+@color-text-title: @color-accent;
+@color-text-default: @color-accent-darker;
+@color-text-link: @color-accent;
+@color-text-hover: @color-accent-highlight;
+@color-text-active: @color-accent;
+
+@color-button-bg-g1: #ffffff;
+@color-button-bg-g2: #e2eaf1;
+@color-button-bg-g3: #aad3f2;
+@color-button-text-default: @color-accent-darker;
+
+@color-header-bg: @color-accent;
+@color-header-text: @color-base;
+
+@color-userinformation-bg: @color-base;
+
+@color-menu-bg-default: @color-base;
+@color-menu-bg-selected: @color-accent;
+@color-menu-bg-hover: @color-accent-lighter;
+@color-menu-text-default: @color-accent-darker;
+@color-menu-text-selected: @color-base;
+
+@color-accordion-contents-bg: #ebf3fa;
+
+@color-module-bg: @color-main;
+@color-notice-list-bg-default: @color-base;
+@color-notice-list-border-default: @color-main;
+@color-approval-list-member: @color-accent;
+@color-workovertime-bg: @color-base;
+
+@color-calendar-bg: @color-base;
+@color-calendar-bg-today: #faebeb;
+@color-calendar-bg-othermonth: #dee5ec;
+@color-calendar-border-default: #ebf3fa;
+@color-calendar-border-today: #bf0000;
+@color-calendar-text-sat: #006cbf;
+@color-calendar-text-sun: #bf0000;
+@color-calendar-item-error-bg: #bf0000;
+@color-calendar-item-error-text: #ffffff;
+@color-calendar-item-expense-bg: #006cbf;
+@color-calendar-item-expense-text: #ffffff;
+@color-calendar-item-rest-bg: #79bf00;
+@color-calendar-item-rest-text: #ffffff;
+
+@color-menulist-bg-default: @color-base;
+@color-menulist-bg-hover: @color-accent-lighter;
+@color-menulist-border-default: @color-accent-darker;
+@color-menulist-text-default: @color-accent-darker;
+
+/* 装飾 */
+@radius: 3px;
+@box-shadow: 0 1px 3px 1px rgba(0,0,0,0.2);
+
+/******************************
+ * Webフォント
+******************************/
+@font-face {
+  font-family: "Fujitsu Sans";
+  src: url('../font/eot/FujitsuSansRegular.eot'), url('../font/FujitsuSansRegular.ttf') format('truetype');
+}
+@font-face {
+  font-family: "Fujitsu Sans Bold";
+  src: url('../font/eot/FujitsuSansBold.eot'), url('../font/FujitsuSansBold.ttf') format('truetype');
+}
+@font-face {
+  font-family: "Fujitsu Sans Medium";
+  src: url('../font/eot/FujitsuSansMedium.eot'), url('../font/FujitsuSansMedium.ttf') format('truetype');
+}
+@font-face {
+  font-family: "Fujitsu Sans Light";
+  src: url('../font/eot/FujitsuSansLight.eot'), url('../font/FujitsuSansLight.ttf') format('truetype');
+}
+
+/******************************
+ * 標準タグスタイル
+******************************/
+*{
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  box-sizing: border-box;
+}
+html{
+  height: 100%;
+  font-size: 62.5%;
+}
+body{
+  min-width: 1200px;
+  height: 100%;
+  background-color: @color-bg-default;
+  line-height: 1;
+  font-size: @font-size-medium;
+  font-family: @font-family;
+  font-weight: 300;
+  color: @color-text-default;
+  -webkit-text-size-adjust: 100%;
+}
+h1,h2,h3,h4,h5,h6{
+  line-height: 1;
+  font-weight: 300;
+  font-size: @font-size-medium;
+}
+a{
+  text-decoration: underline;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  font-size: @font-size-medium;
+}
+a:link{
+  color: @color-text-link;
+}
+a:visited {
+  color: @color-text-link;  
+}
+a:hover {
+  color: @color-text-hover;
+}
+a:active {
+  color: @color-text-active;
+}
+a.fbui-touch{
+  -webkit-tap-highlight-color: rgba(0,0,0,0) !important;
+}
+pre{
+  font-family: Sans-serif;
+  font-weight: normal;
+  font-size: @font-size-medium;
+}
+ul{}
+ul > li{
+  list-style-type: none;
+}
+/* 入力有効 */
+input,textarea,select,label{
+  -webkit-user-select: auto;
+}
+/* ボタン */
+input[type=button],
+input[type=submit],
+button{
+}
+
+/* テキスト入力 */
+input[type=text],
+input[type=email],
+input[type=search],
+textarea{
+}
+
+/* 検索ボックス */
+input[type=search]{
+  display: block;
+  width: 100%;
+  padding: @margin-thin @margin-thin @margin-thin 32px;
+  -webkit-appearance: none;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  border: none;
+  border-bottom: 1px solid @color-border-default;
+  background-image: url('../images/icon/search.svg');
+  background-repeat: no-repeat;
+  background-position: 5px center;
+  background-size: 18px;
+  font-family: @font-family;
+  font-size: @font-size-medium;
+}
+
+/* ボタン */
+button{
+  appearance: none;
+  border: none;
+  background: none;
+  
+  padding: @margin-small @margin-medium;
+  border-radius: @radius;
+  background: linear-gradient(@color-button-bg-g1, @color-button-bg-g2);
+  box-shadow: @box-shadow;
+  cursor: pointer;
+}
+button:hover{
+  background: linear-gradient(@color-button-bg-g2, @color-button-bg-g3);
+}
+button:active{
+  
+  background-color: @color-button-bg-g3;
+}
+
+/* セレクトボックス */
+select{
+}
+
+/******************************
+ * コンポーネント
+******************************/
+/*スペーサー*/
+.moui-spacer-large{
+  display: inline-block;
+  width: @margin-large;
+  font-size: 0;
+}
+.moui-spacer-medium{
+  display: inline-block;
+  width: @margin-medium;
+  font-size: 0;
+}
+.moui-spacer-small{
+  display: inline-block;
+  width: @margin-small;
+  font-size: 0;
+}
+
+/******************************
+ * 共通スタイル
+******************************/
+body{
+  display: flex;
+  flex-direction: column;
+}
+
+/* ヘッダー */
+.moui-systemheader{
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  min-height: 120px;
+  padding: @margin-medium @margin-large;
+  background-color: @color-header-bg;
+  
+  .moui-systemtitle{
+    flex-grow: 1;
+    margin-bottom: 1px;
+    
+    h1{
+      font-family: "Fujitsu Sans";
+      font-size: 4.5rem;
+      letter-spacing: 0.3rem;
+      color: @color-header-text;
+    }
+  }
+  .moui-lastlogin{
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 7px;
+    
+    input{
+      width: 300px;
+    }
+  }
+  .moui-fujitsulogo{
+    margin-left: @margin-large;
+  }
+}
+
+.moui-subinformation{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 12px @margin-large;
+  background-color: @color-userinformation-bg;
+  box-shadow: @box-shadow;
+  
+  .moui-userinformation{
+    flex-grow: 1;
+  }
+  .moui-search{
+    width: 300px;
+  }
+}
+
+.moui-maincontents-wrapper{
+  display: flex;
+  flex-direction: row;
+  padding: @margin-medium @margin-large;
+  
+  /* サービスメニュー */
+  .moui-servicemenu{
+    min-width: 320px;
+    margin-right: calc(@margin-large - 12px);
+    padding: 0 12px 100px 0;
+    overflow-y: auto;
+    
+    .moui-searchsection{
+      margin-bottom: @margin-medium;
+    }
+    
+    .moui-menusection{
+      margin-bottom: @margin-large;
+    }
+    .moui-menusection:last-child{
+      margin-bottom: 0;
+    }
+    
+    .moui-title{
+      margin-bottom: @margin-small;
+      font-weight: bold;
+      color: @color-text-title;
+    }
+    
+    ul.moui-menulist {
+      a,span{
+        display: block;
+        padding: @margin-small @margin-small @margin-small 40px;
+        background-image: url('../images/icon/document1.svg');
+        background-repeat: no-repeat;
+        background-position: 10px center;
+        background-size: 18px;
+        text-decoration: none;
+        color: @color-menu-text-default;
+      }
+      a:hover{
+        background-color: @color-menu-bg-hover;
+      }
+      a:active{
+        background-color: @color-menu-bg-selected;
+      }
+      a.moui-selected{
+        background-color: @color-menu-bg-selected;
+        background-image: url('../images/icon/document1_selected.svg');
+        color: @color-menu-text-selected;
+      }
+
+      /* アイコン種別 */
+      .moui-top{
+        background-image: url('../images/icon/home.svg');
+      }
+      .moui-top.moui-selected{
+        background-image: url('../images/icon/home_selected.svg');
+      }
+      .moui-favorite{
+        background-image: url('../images/icon/tag.svg');
+      }
+      .moui-favorite.moui-selected{
+        background-image: url('../images/icon/tag_selected.svg');
+      }
+      .moui-all{
+        background-image: url('../images/icon/list.svg');
+      }
+      .moui-all.moui-selected{
+        background-image: url('../images/icon/list_selected.svg');
+      }
+      .moui-sequence{
+        background-image: url('../images/icon/archive.svg');
+      }
+      .moui-sequence.moui-selected{
+        background-image: url('../images/icon/archive_selected.svg');
+      }
+      .moui-evaluation{
+        background-image: url('../images/icon/star.svg');
+        background-size: 20px;
+      }
+      .moui-evaluation.moui-selected{
+        background-image: url('../images/icon/star_selected.svg');
+        background-size: 20px;
+      }
+      .moui-inquiry{
+        background-image: url('../images/icon/document2.svg');
+        background-position: 12px center;
+        background-size: 16px;
+      }
+      .moui-inquiry.moui-selected{
+        background-image: url('../images/icon/document2_selected.svg');
+      }
+      .moui-history{
+        background-image: url('../images/icon/albums.svg');
+        background-position: 12px center;
+        background-size: 16px;
+      }
+      .moui-history.moui-selected{
+        background-image: url('../images/icon/albums_selected.svg');
+      }
+      .moui-settings{
+        background-image: url('../images/icon/gear.svg');
+      }
+      .moui-settings.moui-selected{
+        background-image: url('../images/icon/gear_selected.svg');
+      }
+      .moui-help{
+        background-image: url('../images/icon/question.svg');
+      }
+      .moui-help.moui-selected{
+        background-image: url('../images/icon/question_selected.svg');
+      }
+      
+      /* アコーディオン */
+      .moui-accordion{
+        .moui-accordion-title{
+          position: relative;
+          display: block;
+        }
+        .moui-accordion-title .moui-accordion-mark{
+          position: absolute;
+          top: 50%;
+          right: 8px;
+          display: block;
+          width: 24px;
+          height: 24px;
+          margin-top: -12px;
+          padding: 0;
+          background-image: url('../images/icon/arrow-right.svg');
+          background-repeat: no-repeat;
+          background-size: 8px;
+        }
+        .moui-accordion-title.moui-close .moui-accordion-mark{
+          -webkit-transition: 0.2s ease-in-out;
+          -webkit-transform: rotate(0);
+        }
+        .moui-accordion-title.moui-open .moui-accordion-mark{
+          -webkit-transition: 0.2s ease-in-out;
+          -webkit-transform: rotate(90deg);
+        }
+        
+        .moui-accordion-title:hover{
+          background-color: @color-menu-bg-hover;
+          cursor: pointer;
+        }
+        .moui-accordion-title:active{
+          background-color: @color-menu-bg-selected;
+        }
+
+        .moui-accordion-contents{
+          
+          margin-bottom: @margin-small;
+          
+          .moui-category-title{
+            margin: @margin-small 0 @margin-thin @margin-medium;
+            font-weight: bold;
+          }
+          ul{
+            
+          }
+          ul > li{
+            margin-left: @margin-medium;
+            border-top: 1px solid @color-border-default;
+          }
+        }
+      }
+      
+    }
+    ul.moui-menulist > li{
+      border-top: 1px solid @color-border-default;
+    }
+    ul.moui-menulist > li:last-child{
+      border-bottom: 1px solid @color-border-default;
+    }
+  }
+  
+  
+  
+  /* メインコンテンツ */
+  .moui-maincontents{
+    flex-grow: 1;
+    overflow-y: auto;
+  }
+}
+
+/******************************
+ * トップ画面
+******************************/
+.moui-maincontents.moui-top{
+  
+  .moui-dashboard{
+    display: flex;
+    flex-direction: column;
+
+    padding: 0 30px 100px 0;
+
+    .moui-module{
+      margin-bottom: @margin-medium;
+
+      h3{
+        padding: @margin-small @margin-small @margin-small 40px;
+        background-image: url('../images/icon/info.svg');
+        background-repeat: no-repeat;
+        background-position: 5px center;
+        background-size: 24px;
+        font-size:  @font-size-large;
+      }
+      .moui-contents{
+        padding: @margin-thin;
+        border-radius: @radius;
+        background-color: @color-module-bg;
+        box-shadow: @box-shadow;
+      }
+    }
+    .moui-module:last-child{
+      margin-bottom: 0;
+    }
+
+    .moui-transportation{
+      text-align: center;
+
+      .moui-center{
+        display: inline-flex;
+        align-items: center;
+        padding: @margin-small;
+        border-radius: @radius;
+        background-color: @color-emphasis-lighter;
+      }
+      h3{
+        display: inline-block;
+        margin-right: @margin-medium;
+        background-image: url('../images/icon/train.svg');
+        background-position: 8px center;
+        background-size: 18px;
+      }
+    }
+
+    .moui-notice{  
+      h3{
+        background-image: url('../images/icon/warning.svg');
+      }
+      .moui-contents{
+        ul{
+        }
+        ul > li{
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          padding: @margin-small;
+          border-bottom: 1px dotted @color-notice-list-border-default;
+          background-color: @color-notice-list-bg-default;
+
+          time{
+            margin-right: @margin-medium;
+          }
+          .moui-date{
+            margin-right: @margin-small;
+            letter-spacing: 0.1rem;
+          }
+          .moui-time{
+            letter-spacing: 0.1rem;
+          }
+          .moui-text{
+            flex-grow: 1;
+            word-break: break-all;
+            -webkit-user-select: auto;
+          }
+          .moui-action{
+            min-width: 100px;
+            text-align: right;
+          }
+        }
+        ul > li:last-child{
+          border-bottom: none;
+        }
+      }
+    }
+    .moui-calendar{
+
+      h3{
+        background-image: url('../images/icon/checkmark.svg');
+      }
+
+      .moui-contents{
+        h4{
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          padding: @margin-small;
+          text-align: center;
+          font-size: @font-size-large;
+
+          .moui-prevmonth{
+            display: inline-block;
+            padding: @margin-thin @margin-medium;
+            text-decoration: none;
+          }
+          .moui-prevmonth:hover{
+            background-color: #ffffff;
+            border-radius: @radius;
+            opacity: 0.7;
+          }
+          .moui-currentmonth{
+            display: inline-block;
+            margin: 0 @margin-medium;
+          }
+          .moui-nextmonth{
+            display: inline-block;
+            padding: @margin-thin @margin-medium;
+            text-decoration: none;
+          }
+          .moui-nextmonth:hover{
+            background-color: #ffffff;
+            border-radius: @radius;
+            opacity: 0.7;
+          }
+        }
+        ul.moui-calendar-label{
+          display: table;
+          table-layout: fixed;
+          width: 100%;
+        }
+        ul.moui-calendar-label > li{
+          display: table-cell;
+          padding: @margin-thin;
+          border: 1px solid @color-calendar-border-default;
+          background-color: @color-calendar-bg;
+          text-align: center;
+          font-weight: bold;
+        }
+        ul.moui-calendar-label > li:nth-child(6){
+          color: @color-calendar-text-sat;
+        }
+        ul.moui-calendar-label > li:nth-child(7){
+          color: @color-calendar-text-sun;
+        }
+        ul.moui-calendar-contents{
+          display: table;
+          table-layout: fixed;
+          width: 100%;
+        }
+        ul.moui-calendar-contents > li{
+          display: table-cell;
+          height: 60px;
+          padding: @margin-thin;
+          border: 1px solid @color-calendar-border-default;
+          background-color: @color-calendar-bg;
+
+          .moui-item{
+            display: block;
+            margin: @margin-thin 0;
+            padding: @margin-thin;
+            border-radius: @radius;
+            text-align: center;
+            text-decoration: none;
+            font-size: @font-size-small;
+          }
+          .moui-item:hover{
+            opacity: 0.7;
+          }
+          .moui-item-rest{
+            background-color: @color-calendar-item-rest-bg;
+            color: @color-calendar-item-rest-text;
+          }
+          .moui-item-error{
+            background-color: @color-calendar-item-error-bg;
+            color: @color-calendar-item-error-text;
+          }
+          .moui-item-expensebefore{
+            background-color: @color-calendar-item-expense-bg;
+            color: @color-calendar-item-expense-text;
+          }
+        }
+        ul.moui-calendar-contents > li:nth-child(6){
+          color: @color-calendar-text-sat;
+        }
+        ul.moui-calendar-contents > li:nth-child(7){
+          color: @color-calendar-text-sun;
+        }
+        ul.moui-calendar-contents > li.moui-today{
+          border-color: @color-calendar-border-today;
+          background-color: @color-calendar-bg-today;
+        }
+        ul.moui-calendar-contents > li.moui-prevmonth,
+        ul.moui-calendar-contents > li.moui-nextmonth{
+          background-color: @color-calendar-bg-othermonth;
+        }
+      }
+    }
+
+    .moui-workovertime{
+
+      h3{
+        background-image: url('../images/icon/clock.svg');
+      }
+
+      .moui-contents{
+        dl.moui-time{
+          padding: @margin-small;
+          background-color: @color-workovertime-bg;
+
+          dt{
+            display: inline-block;
+            margin-right: @margin-small;
+          }
+          dd{
+            display: inline-block;
+            margin-right: @margin-medium;
+          }
+        }
+
+      }
+    }
+
+    .moui-application{
+
+      h3{
+        background-image: url('../images/icon/archive.svg');
+      }
+      .moui-contents{
+        ul{
+        }
+        ul > li{
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          padding: @margin-small;
+          border-bottom: 1px dotted @color-notice-list-border-default;
+          background-color: @color-notice-list-bg-default;
+
+          time{
+            margin-right: @margin-medium;
+          }
+          .moui-date{
+            margin-right: @margin-small;
+            letter-spacing: 0.1rem;
+          }
+          .moui-time{
+            letter-spacing: 0.1rem;
+          }
+          .moui-text{
+            flex-grow: 1;
+            word-break: break-all;
+            -webkit-user-select: auto;
+          }
+          .moui-stage{
+            display: inline-block;
+            min-width: 100px;
+            margin: -4px 0;
+            padding: 2px 0 2px 20px;
+            background-image: url('../images/icon/person.svg');
+            background-repeat: no-repeat;
+            background-position: left center;
+            background-size: 16px;
+            text-align: left;
+          }
+          .moui-action{
+            min-width: 100px;
+            text-align: right;
+          }
+        }
+        ul > li:last-child{
+          border-bottom: none;
+        }
+      }
+    }
+    .moui-approval{
+
+      h3{
+        background-image: url('../images/icon/inbox.svg');
+      }
+      .moui-contents{
+
+        ul{
+        }
+        ul > li{
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          padding: @margin-small;
+          border-bottom: 1px dotted @color-notice-list-border-default;
+          background-color: @color-notice-list-bg-default;
+
+          time{
+            margin-right: @margin-medium;
+          }
+          .moui-date{
+            margin-right: @margin-small;
+            letter-spacing: 0.1rem;
+          }
+          .moui-time{
+            letter-spacing: 0.1rem;
+          }
+          .moui-member{
+            display: inline-block;
+            width: 100px;
+            margin-right: @margin-medium;
+            margin: -4px 0;
+            padding: 2px 0 2px 20px;
+            background-image: url('../images/icon/person-emphasis.svg');
+            background-repeat: no-repeat;
+            background-position: left center;
+            background-size: 16px;
+            color: @color-approval-list-member;
+          }
+          .moui-text{
+            flex-grow: 1;
+            word-break: break-all;
+            -webkit-user-select: auto;
+          }
+          .moui-action{
+            min-width: 100px;
+            text-align: right;
+          }
+        }
+        ul > li:last-child{
+          border-bottom: none;
+        }
+      }
+    }
+  }
+  
+  .moui-applymenulist{
+    h3{
+      margin: @margin-medium 0;
+      font-size: @font-size-large;
+    }
+  }
+  .moui-applymenulist > ul{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .moui-applymenulist > ul > li{
+    margin: 0 @margin-small @margin-small 0;
+
+    a{
+      display: inline-block;
+      padding: @margin-small @margin-medium;
+      min-width: 300px;
+      border: 1px solid @color-menulist-border-default;
+      background-color: @color-menulist-bg-default;
+      text-decoration: none;
+      color: @color-menulist-text-default;
+    }
+    a:hover{
+      background-color: @color-menulist-bg-hover;
+      color: @color-menulist-text-default;
+    }
+  }
+}
