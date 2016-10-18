@@ -32,9 +32,10 @@
   
   <div class="moui-maincontents-wrapper">
     <nav class="moui-servicemenu">
+      
       <section class="moui-menusection">
         <ul class="moui-menulist">
-          <li><a href="#" class="moui-top moui-selected">トップ</a></li>
+          <li><a href="#" class="moui-top moui-selected" onclick="MOUI.selectMenu(this, '#moui-dashboard')">トップ</a></li>
         </ul>
       </section>
       
@@ -69,7 +70,7 @@
             <div class="moui-accordion-contents">
               <h4 class="moui-category-title">就業・旅費</h4>
               <ul>
-                <li><a href="#">休暇・欠勤・休日</a></li>
+                <li><a href="#" onclick="MOUI.selectMenu(this, '#moui-leave')">休暇・欠勤・休日</a></li>
                 <li><a href="#">勤務実績</a></li>
                 <li><a href="#">出張旅費・通勤</a></li>
               </ul>
@@ -126,129 +127,149 @@
     </nav>
     
     <main class="moui-maincontents moui-top">
-     <section class="moui-module moui-transportation">
-         <div class="moui-center">
-           <h3>ICカードの交通費データがあります。</h3>
-           <button>交通費を精算する</button>
-        </div>
-      </section>
-      <section class="moui-module moui-notice">
-        <h3>お知らせ</h3>
-        <div class="moui-contents">
-          <ul>
-            <li><time><span class="moui-date">10/1</span><span class="moui-time">00:00</span></time><span class="moui-text">受入検査を行ってください。</span><span class="moui-action"><a href="#">受入検査を行う</a></span></li>
-            <li><time><span class="moui-date">10/1</span><span class="moui-time">00:00</span></time><span class="moui-text">○○○○○○○○○○○○○○○○○○○○</span><span class="moui-action"><a href="#">○○○○○申請を行う</a></span></li>
-            <li><time><span class="moui-date">10/1</span><span class="moui-time">00:00</span></time><span class="moui-text">○○○○○○○○○○○○○○○○○○○○</span><span class="moui-action"><a href="#">○○○○○を確認する</a></span></li>
-          </ul>
-        </div>
-      </section>
-      <section class="moui-module moui-calendar">
-        <h3>勤怠・申請カレンダー</h3>
-        <div class="moui-contents">
-          <h4>
-            <a href="#" class="moui-prevmonth">&lt;</a>
-            <span class="moui-currentmonth">11月度</span>
-            <a href="#" class="moui-nextmonth">&gt;</a>
-          </h4>
-          <ul class="moui-calendar-label">
-            <li><div>月</div></li>
-            <li><div>火</div></li>
-            <li><div>水</div></li>
-            <li><div>木</div></li>
-            <li><div>金</div></li>
-            <li><div>土</div></li>
-            <li><div>日</div></li>
-          </ul>
-          <ul class="moui-calendar-contents">
-            <li class="moui-prevmonth"><span>10/17</span></li>
-            <li class="moui-prevmonth"><span>18</span></li>
-            <li class="moui-prevmonth"><span>19</span></li>
-            <li class="moui-prevmonth"><span>20</span></li>
-            <li><span>21</span></li>
-            <li><span>22</span></li>
-            <li><span>23</span></li>
-          </ul>
-          <ul class="moui-calendar-contents">
-            <li>
-              <span>24</span>
-              <a href="#" class="moui-item moui-item-error">差額未精算</a>
-            </li>
-            <li><span>25</span></li>
-            <li>
-              <span>26</span>
-              <a href="#" class="moui-item moui-item-error">出勤エラー</a>
-            </li>
-            <li><span>27</span></li>
-            <li><span>28</span></li>
-            <li><span>29</span></li>
-            <li><span>30</span></li>
-          </ul>
-          <ul class="moui-calendar-contents">
-            <li><span>31</span></li>
-            <li class="moui-today"><span>11/1</span></li>
-            <li>
-              <span>2</span>
-              <a href="#" class="moui-item moui-item-rest">年休</a>
-            </li>
-            <li>
-              <span>3</span>
-              
-            </li>
-            <li><span>4</span></li>
-            <li><span>5</span></li>
-            <li><span>6</span></li>
-          </ul>
-          <ul class="moui-calendar-contents">
-            <li><span>7</span></li>
-            <li><span>8</span></li>
-            <li><span>9</span></li>
-            <li>
-              <span>10</span>
-              <a href="#" class="moui-item moui-item-expensebefore">出張前申請</a>
-            </li>
-            <li><span>11</span></li>
-            <li><span>12</span></li>
-            <li><span>13</span></li>
-          </ul>
-          <ul class="moui-calendar-contents">
-            <li><span>14</span></li>
-            <li><span>15</span></li>
-            <li><span>16</span></li>
-            <li><span>17</span></li>
-            <li><span>18</span></li>
-            <li><span>19</span></li>
-            <li><span>20</span></li>
-          </ul>
-        </div>
-      </section>
-      <section class="moui-module moui-workovertime">
-        <h3>残業時間</h3>
-        <div class="moui-contents">
-          <dl class="moui-time">
-            <dt>今月度の時間外:</dt><dd> 26.4h</dd>
-            <dt>年次休暇取得:</dt><dd> 18.5/40日</dd>
-          </dl>
-        </div>
-      </section>
-      <section class="moui-module moui-application">
-        <h3>回送状況</h3>
-        <div class="moui-contents">
-          <ul>
-            <li><time><span class="moui-date">10/1</span><span class="moui-time">00:00</span></time><span class="moui-text">交通費申請 9/30(金) 蒲田ソリューション 198円</span><span class="moui-stage">稲垣 潤</span><span class="moui-action"><a href="#">申請内容詳細</a></span></li>
-            <li><time><span class="moui-date">10/1</span><span class="moui-time">00:00</span></time><span class="moui-text">年次休暇 10/3(月)</span><span class="moui-stage">稲垣 潤</span><span class="moui-action"><a href="#">申請内容詳細</a></span></li>
-            <li><time><span class="moui-date">10/1</span><span class="moui-time">00:00</span></time><span class="moui-text">派遣変更 ○○○○</span><span class="moui-stage">人事</span><span class="moui-action"><a href="#">申請内容詳細</a></span></li>
-          </ul>
-        </div>
-      </section>
-      <section class="moui-module moui-approval">
-        <h3>承認待ち一覧</h3>
-        <div class="moui-contents">
-          <ul>
-            <li><time><span class="moui-date">10/1</span><span class="moui-time">00:00</span></time><span class="moui-member">西田 善彦</span><span class="moui-text">交通費申請 9/30(金) 蒲田ソリューションスク 198円</span><span class="moui-action"><a href="#">申請内容確認</a></span></li>
-            <li><time><span class="moui-date">10/1</span><span class="moui-time">00:00</span></time><span class="moui-member">西田 善彦</span><span class="moui-text">年次休暇 10/3(月)</span><span class="moui-action"><a href="#">申請内容確認</a></span></li>
-          </ul>
-        </div>
-      </section>
+      
+      <div id="moui-dashboard" class="moui-dashboard">
+        <section id="moui-transportation" class="moui-module moui-transportation">
+           <div class="moui-center">
+             <h3>ICカードの交通費データがあります。</h3>
+             <button id="action-apply-transportation">交通費を精算する</button>
+          </div>
+        </section>
+        <section class="moui-module moui-notice">
+          <h3>お知らせ</h3>
+          <div class="moui-contents">
+            <ul>
+              <li><time><span class="moui-date">10/1</span><span class="moui-time">00:00</span></time><span class="moui-text">受入検査を行ってください。</span><span class="moui-action"><a href="#">受入検査を行う</a></span></li>
+              <li><time><span class="moui-date">10/1</span><span class="moui-time">00:00</span></time><span class="moui-text">○○○○○○○○○○○○○○○○○○○○</span><span class="moui-action"><a href="#">○○○○○申請を行う</a></span></li>
+              <li><time><span class="moui-date">10/1</span><span class="moui-time">00:00</span></time><span class="moui-text">○○○○○○○○○○○○○○○○○○○○</span><span class="moui-action"><a href="#">○○○○○を確認する</a></span></li>
+            </ul>
+          </div>
+        </section>
+        <section class="moui-module moui-calendar">
+          <h3>勤怠・申請カレンダー</h3>
+          <div class="moui-contents">
+            <h4>
+              <a href="#" class="moui-prevmonth">&lt;</a>
+              <span class="moui-currentmonth">11月度</span>
+              <a href="#" class="moui-nextmonth">&gt;</a>
+            </h4>
+            <ul class="moui-calendar-label">
+              <li><div>月</div></li>
+              <li><div>火</div></li>
+              <li><div>水</div></li>
+              <li><div>木</div></li>
+              <li><div>金</div></li>
+              <li><div>土</div></li>
+              <li><div>日</div></li>
+            </ul>
+            <ul class="moui-calendar-contents">
+              <li class="moui-prevmonth"><span>10/17</span></li>
+              <li class="moui-prevmonth"><span>18</span></li>
+              <li class="moui-prevmonth"><span>19</span></li>
+              <li class="moui-prevmonth"><span>20</span></li>
+              <li><span>21</span></li>
+              <li><span>22</span></li>
+              <li><span>23</span></li>
+            </ul>
+            <ul class="moui-calendar-contents">
+              <li>
+                <span>24</span>
+                <a href="#" class="moui-item moui-item-error">差額未精算</a>
+              </li>
+              <li><span>25</span></li>
+              <li>
+                <span>26</span>
+                <a href="#" class="moui-item moui-item-error">出勤エラー</a>
+              </li>
+              <li><span>27</span></li>
+              <li><span>28</span></li>
+              <li><span>29</span></li>
+              <li><span>30</span></li>
+            </ul>
+            <ul class="moui-calendar-contents">
+              <li><span>31</span></li>
+              <li class="moui-today"><span>11/1</span></li>
+              <li>
+                <span>2</span>
+                <a href="#" class="moui-item moui-item-rest">年休</a>
+              </li>
+              <li>
+                <span>3</span>
+
+              </li>
+              <li><span>4</span></li>
+              <li><span>5</span></li>
+              <li><span>6</span></li>
+            </ul>
+            <ul class="moui-calendar-contents">
+              <li><span>7</span></li>
+              <li><span>8</span></li>
+              <li><span>9</span></li>
+              <li>
+                <span>10</span>
+                <a href="#" class="moui-item moui-item-expensebefore">出張前申請</a>
+              </li>
+              <li><span>11</span></li>
+              <li><span>12</span></li>
+              <li><span>13</span></li>
+            </ul>
+            <ul class="moui-calendar-contents">
+              <li><span>14</span></li>
+              <li><span>15</span></li>
+              <li><span>16</span></li>
+              <li><span>17</span></li>
+              <li><span>18</span></li>
+              <li><span>19</span></li>
+              <li><span>20</span></li>
+            </ul>
+          </div>
+        </section>
+        <section class="moui-module moui-workovertime">
+          <h3>残業時間</h3>
+          <div class="moui-contents">
+            <dl class="moui-time">
+              <dt>今月度の時間外:</dt><dd> 26.4h</dd>
+              <dt>年次休暇取得:</dt><dd> 18.5/40日</dd>
+            </dl>
+          </div>
+        </section>
+        <section class="moui-module moui-application">
+          <h3>回送状況</h3>
+          <div class="moui-contents">
+            <ul>
+              <li><time><span class="moui-date">10/1</span><span class="moui-time">00:00</span></time><span class="moui-text">交通費申請 9/30(金) 蒲田ソリューション 198円</span><span class="moui-stage">稲垣 潤</span><span class="moui-action"><a href="#">申請内容詳細</a></span></li>
+              <li><time><span class="moui-date">10/1</span><span class="moui-time">00:00</span></time><span class="moui-text">年次休暇 10/3(月)</span><span class="moui-stage">稲垣 潤</span><span class="moui-action"><a href="#">申請内容詳細</a></span></li>
+              <li><time><span class="moui-date">10/1</span><span class="moui-time">00:00</span></time><span class="moui-text">派遣変更 ○○○○</span><span class="moui-stage">人事</span><span class="moui-action"><a href="#">申請内容詳細</a></span></li>
+            </ul>
+          </div>
+        </section>
+        <section class="moui-module moui-approval">
+          <h3>承認待ち一覧</h3>
+          <div class="moui-contents">
+            <ul>
+              <li><time><span class="moui-date">10/1</span><span class="moui-time">00:00</span></time><span class="moui-member">西田 善彦</span><span class="moui-text">交通費申請 9/30(金) 蒲田ソリューションスク 198円</span><span class="moui-action"><a href="#">申請内容確認</a></span></li>
+              <li><time><span class="moui-date">10/1</span><span class="moui-time">00:00</span></time><span class="moui-member">西田 善彦</span><span class="moui-text">年次休暇 10/3(月)</span><span class="moui-action"><a href="#">申請内容確認</a></span></li>
+            </ul>
+          </div>
+        </section>
+      </div>
+      
+      <div id="moui-leave" class="moui-applymenulist">
+        <h3>休暇・欠勤・休日</h3>
+        <ul>
+          <li><a href="#">年次休暇申請</a></li>
+          <li><a href="#">◯◯休暇申請</a></li>
+          <li><a href="#">◯◯休暇申請</a></li>
+          <li><a href="#">◯◯休暇申請</a></li>
+          <li><a href="#">◯◯休暇申請</a></li>
+          <li><a href="#">◯◯休暇申請</a></li>
+          <li><a href="#">◯◯休暇申請</a></li>
+          <li><a href="#">◯◯休暇申請</a></li>
+          <li><a href="#">◯◯休暇申請</a></li>
+          <li><a href="#">◯◯休暇申請</a></li>
+          <li><a href="#">◯◯休暇申請</a></li>
+        </ul>
+      </div>
     </main>
   </div>
 </body>

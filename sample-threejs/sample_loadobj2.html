@@ -84,12 +84,6 @@ body {
     };
     var onError = function ( xhr ) {
     };
-    /*
-    var material = new THREE.MeshPhongMaterial({
-          color: 0xffffff, //球の色
-          wireframe: true //ワイヤーフレーム有効
-    });
-    */
     var mtlLoader = new THREE.MTLLoader();
     mtlLoader.load( 'model/building_kosugi_161017.mtl', function( materials ) {
       
@@ -98,11 +92,6 @@ body {
       var objLoader = new THREE.OBJLoader();
       objLoader.setMaterials( materials );
       objLoader.load( 'model/building_kosugi_161017.obj', function ( object ) {
-      
-      //obj全体にアクセス
-      object.position.x = 0;
-      object.position.y = 0;
-      object.position.z = 0;
       
       scene.add( object );
       
