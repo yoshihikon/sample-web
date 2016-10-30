@@ -1,0 +1,18 @@
+{
+  "nodes": [
+    {"id": "aaa", "group": 1},
+    {"id": "bbb", "group": 2},
+    {"id": "ccc", "group": 3},
+    {"id": "ddd", "group": 4},
+    {"id": "eee", "group": 5},
+    {"id": "fff", "group": 5}
+  ],
+  "links": [
+    {"source": "aaa", "target": "bbb", "value": 1},
+    {"source": "aaa", "target": "ccc", "value": 2},
+    {"source": "aaa", "target": "ddd", "value": 1},
+    {"source": "aaa", "target": "eee", "value": 1},
+    {"source": "aaa", "target": "fff", "value": 1},
+    {"source": "ccc", "target": "ddd", "value": 1}
+  ]
+}
