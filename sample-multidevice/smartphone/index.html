@@ -1,0 +1,264 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="default" />
+
+<title>DEMO:SMART PHONE</title>
+
+<link rel="start" href="./" title="" />
+<link rel="contents" href="sitemap/" title="" />
+<link rel="shortcut icon" href="favicon.ico" />
+<link rel="apple-touch-icon" href="./img/iconPicture.png">
+<link rev="made" href="mailto:yoshihiko.n@jp.fujitsu.com" />
+<link href="./css/import.css" rel="stylesheet" type="text/css" />
+
+</head>
+
+<body>
+
+<!--ヘッダー-->
+<header id="commonHeader">
+	<h1>DEMO:SMART PHONE</h1>
+</header>
+
+<!--フッター-->
+<footer id="commonFooter">
+	<nav>
+		<ul>
+			<li><a href="#"><span>menu1</span></a></li>
+			<li><a href="#"><span>menu2</span></a></li>
+			<li><a href="#"><span>menu3</span></a></li>
+			<li><a href="#"><span>menu4</span></a></li>
+			<li><a href="#"><span>menu5</span></a></li>
+		</ul>
+	</nav>
+</footer>
+
+<!--コンテンツ-->
+<div id="contentsArea">
+
+<section class="text">
+	<h2>文章</h2>
+	<p>あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、郊外のぎらぎらひかる草の波。<br />
+		またそのなかでいっしょになったたくさんのひとたち、ファゼーロとロザーロ、羊飼のミーロや、顔の赤いこどもたち、地主のテーモ、山猫博士のボーガン ト・デストゥパーゴなど、いまこの暗い巨きな石の建物のなかで考えていると、みんなむかし風のなつかしい青い幻燈のように思われます。では、わたくしはいつかの小さなみだしをつけながら、しずかにあの年のイーハトーヴォの五月から十月までを書きつけましょう。</p>
+</section>
+
+<section>
+	<h2>画像</h2>
+	<h3>w:320px h:320px</h3>
+	<img src="img/320x320.jpg" width="320" height="320" alt="w:320px h:320px" />
+</section>
+
+<section>
+	<h2>動画</h2>
+	<h3>mp4</h3>
+	<video controls autoplay poster="image/poster.gif" width="320" height="240"> 
+		<source src="./video/sample.mp4"></source><!--Safari-->
+		<p>動画を再生するには、videoタグをサポートしたブラウザで閲覧してください。</p>
+	</video>
+	<h3>ogg</h3>
+	<video controls autoplay poster="image/poster.gif" width="320" height="240"> 
+		<source src="./video/sample.ogm"></source><!--Chrome,FireFox,Opera-->
+		<p>動画を再生するには、videoタグをサポートしたブラウザで閲覧してください。</p>
+	</video>
+</section>
+
+<section class="list">
+	<h2>番号なしリスト</h2>
+	<ul>
+		<li>リストアイテム</li>
+		<li>リストアイテム</li>
+		<li>リストアイテム</li>
+		<li>リストアイテム</li>
+		<li>リストアイテム</li>
+	</ul>
+</section>
+
+<section class="list">
+	<h2>番号付きリスト</h2>
+	<ol>
+		<li>リストアイテム</li>
+		<li>リストアイテム</li>
+		<li>リストアイテム</li>
+		<li>リストアイテム</li>
+		<li>リストアイテム</li>
+	</ol>
+</section>
+
+<section class="form">
+	<h2>フォーム</h2>
+	<form action="/" id="searchBox">
+		<fieldset>
+			<legend>テキスト入力</legend>
+			<ul>
+				<li>
+					<label for="autofocus">オートフォーカス</label>
+					<!--<input id="autofocus" name="autofocus" type="text" autofocus>-->
+				</li>
+				<li>
+					<label for="placehodler">プレースホルダー</label>
+					<input id="placehodler" name="placehodler" type="text" placeholder="入力してください" />
+				</li>
+				<li>
+					<label for="required">必須項目</label>
+					<input id="required" name="required" type="text" required />
+				</li>
+				<li>
+					<label for="pattern">正規表現入力</label>
+					<input type="text" name="pattern" pattern="^[0-9A-Za-z]+$" />※半角英数
+				</li>
+			</ul>
+		</fieldset>
+		<fieldset>
+			<legend>各種情報入力</legend>
+			<ul>
+				<li>
+					<label for="email">メールアドレス</label>
+					<input id="email" name="email" type="email" placeholder="example@domain.com" required />
+				</li>
+				<li>
+					<label for="phone">電話番号</label>
+					<input id="phone" name="phone" type="tel" placeholder="000-0000-0000" />
+				</li>
+				<li>
+					<label for=address>住所</label>
+					<textarea id=address name=address rows=5></textarea>
+				</li>
+				<li>
+					<label for="url">URL</label>
+					<input id="url" name="url" type="url" placeholder="http://www.google.co.jp" />
+				</li>
+				<li>
+					<label for="search">検索テキスト</label>
+					<input id="search" name="search" type="search" placeholder="キーワード" />
+				</li>
+				<li>
+					<label for="date">日付</label>
+					<input id="date" name="date" type="date" />
+				</li>
+				<li>
+					<label for="datetime">UTCによる日時</label>
+					<input id="datetime" name="datetime" type="datetime" />
+				</li>
+				<li>
+					<label for="datetime-local">UTCによらないローカル日時</label>
+					<input id="datetime-local" name="datetime-local" type="datetime-local" />
+				</li>
+				<li>
+					<label for="month">月</label>
+					<input id="month" name="month" type="month" />
+				</li>
+				<li>
+					<label for="week">週</label>
+					<input id="week" name="week" type="week" />
+				</li>
+				<li>
+					<label for="time">時間</label>
+					<input id="time" name="time" type="time" />
+				</li>
+				<li>
+					<label for="color">色</label>
+					<input id="color" name="color" type="color" />
+				</li>
+			</ul>
+		</fieldset>
+		<fieldset>
+			<legend>オートコンプリート</legend>
+			<input type="text" name="yourarea" autocomplete="on" list="tokyo" />
+			<datalist id="tokyo">
+				<option value="渋谷" />
+				<option value="新宿" />
+				<option value="池袋" />
+			</datalist>
+		</fieldset>
+		<fieldset>
+			<legend>複数選択（,カンマで複数選択）</legend>
+			<input type="text" name="hobby" list="hobbys" multiple />
+			<datalist id="hobbys">
+				<option value="映画" />
+				<option value="音楽" />
+				<option value="絵画" />
+				<option value="読書" />
+			</datalist>
+		</fieldset>
+		<fieldset>
+			<legend>数値入力</legend>
+			<ul>
+				<li>
+					<label for="min-max">最大・最小値入力</label>
+					<input type="number" name="min-max" min="1" max="4" />
+				</li>
+				<li>
+					<label for="step">ステップ入力</label>
+					<input type="number"name="step" step="0.5" />
+				</li>
+			</ul>
+		</fieldset>
+		<fieldset>
+			<legend>レンジ</legend>
+			<label for="range">レンジ</label>
+			<input id="range" name="range" type="range"><output name="rangeResult" onforminput="value=range.value"></output><br>
+		</fieldset>
+		<fieldset>
+			<legend>ラジオボタン</legend>
+			<ol>
+				<li>
+					<input id="select1" name="radiobutton" type="radio" />
+					<label for="select1">選択肢1</label>
+				</li>
+				<li>
+					<input id="select2" name="radiobutton" type="radio" />
+					<label for="select2">選択肢2</label>
+				</li>
+				<li>
+					<input id="select3" name="radiobutton" type="radio" disabled />
+					<label for="select3">選択肢3</label>
+				</li>
+			</ol>
+		</fieldset>
+		<fieldset>
+			<legend>チェックボックス</legend>
+			<ol>
+				<li>
+					<input id="checkbox1" name="checkbox" type="checkbox" value="選択肢1" />
+					<label for="checkbox1">選択肢1</label>
+				</li>
+				<li>
+					<input id="checkbox2" name="checkbox" type="checkbox" value="選択肢2" checked />
+					<label for="checkbox2">選択肢2</label>
+				</li>
+				<li>
+					<input id="checkbox3" name="checkbox" type="checkbox" value="選択肢3" disabled />
+					<label for="checkbox3">選択肢3</label>
+				</li>
+			</ol>
+		</fieldset>
+		<fieldset>
+			<legend>セレクトボックス</legend>
+			<select name="selectbox1">
+				<option value="選択肢1" label="選択肢1">選択肢1</option>
+				<option value="選択肢2" label="選択肢2" selected="selected">選択肢2</option>
+				<option value="選択肢3" label="選択肢3">選択肢3</option>
+			</select>
+			<select name="selectbox2" size="3" multiple>
+				<option value="選択肢1" label="選択肢1">選択肢1</option>
+				<option value="選択肢2" label="選択肢2" selected="selected">選択肢2</option>
+				<option value="選択肢3" label="選択肢3" disabled>選択肢3</option>
+			</select>
+		</fieldset>
+		<input type="submit" value="送信" />
+	</form>
+</section>
+
+</div>
+
+
+
+</body>
+</html>
+

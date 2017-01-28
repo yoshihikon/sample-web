@@ -1,0 +1,493 @@
+﻿@charset "utf-8";
+/* ------------------------------------------------------------
+  ヘッダー
+------------------------------------------------------------ */
+/* ----------------------------------------
+  ヘッダー
+---------------------------------------- */
+#headerArea {
+	width: 100%;
+	height: 60px;
+}
+
+/* ----------------------------------------
+  タイトル
+---------------------------------------- */
+#siteTitleArea{
+	width:100%;
+	height:35px;
+	background-color:#308fca;
+	background-image: url(../../img/common/header_title_bg.png);
+	background-repeat: repeat-x;
+}
+#siteTitle{
+	float: left;
+	margin-top:8px;
+	margin-left:8px;
+	font-weight: bold;
+	color: #ffffff;
+}
+#siteTitleSubInformation{
+	float: right;
+}
+#userName{
+	float:left;
+	margin-top:8px;
+	margin-right:12px;
+}
+#loginButton{
+	float:left;
+	margin-top:5px;
+	margin-right:20px;
+}
+#fujitsuLogo{
+	float:left;
+	margin-top:6px;
+	margin-right:12px;
+}
+
+/* ----------------------------------------
+  ユーザーネームエリア
+---------------------------------------- */
+.usreNameBox{
+	display:block;
+}
+.usreNameBox span.left{
+	float: left;
+	display:block;
+	width:10px;
+	height:19px;
+	background-image:url(../../img/common/header_userinfo_bg.png);
+	background-position:left;
+	background-repeat:no-repeat;
+}
+.usreNameBox span.center{
+	float: left;
+	display:block;
+	width:auto;
+	height:19px;
+	background-image:url(../../img/common/header_userinfo_base.png);
+	background-position:-10px;
+	background-repeat:repeat-x;
+}
+.usreNameBox span.right{
+	float: left;
+	display:block;
+	width:10px;
+	height:19px;
+	background-image:url(../../img/common/header_userinfo_bg.png);
+	background-position:right;
+	background-repeat:no-repeat;
+}
+.usreNameBox span.label{
+	display:block;
+	min-width:170px;
+	text-align:center;
+	margin-top:0;
+	text-decoration:none;
+	outline:none;
+	font-size:90%;
+	font-weight:bold;
+	color: #ffffff;
+}
+
+/* ----------------------------------------
+  ナビゲーション
+---------------------------------------- */
+#navigationArea{
+	width:100%;
+	height:25px;
+	background-color:#5c6368;
+	background-image:url(../../img/common/header_nav_bg.png);
+	background-repeat:repeat-x;
+}
+#basicNavigation{
+	float:left;
+}
+#basicNavigation ul{
+}
+#basicNavigation li{
+	float:left;
+	margin-left:-12px;
+}
+#globalDrillDownNavigation{
+	float:left;
+}
+#globalDrillDownNavigation ul{
+}
+#globalDrillDownNavigation li{
+	float:left;
+	margin-left:-12px;
+}
+#globalDrillDownNavigation li:first-child{
+	float:left;
+	margin-left:-14px;
+}
+#subNabigation{
+	float:right;
+}
+#subNabigation .helpIcon{
+	margin-top:4px;
+	margin-right:10px;
+}
+
+/* ----------------------------------------
+  ヘッダーボタン
+---------------------------------------- */
+.headerButton{
+	display:block;
+}
+.headerButton span.left{
+	float: left;
+	display:block;
+	width:10px;
+	height:26px;
+	overflow:hidden;
+	font-size:1px;
+	line-height:1px;
+	text-indent:-9999px;
+	background-image:url(../../img/common/header_button_default.png);
+	background-position:left;
+	background-repeat:no-repeat;
+}
+.headerButton span.center{
+	float: left;
+	display:block;
+	width:auto;
+	height:26px;
+	background-image:url(../../img/common/header_button_default_base.png);
+	background-position:-10px;
+	background-repeat:repeat-x;
+}
+.headerButton span.right{
+	float: left;
+	display:block;
+	width:10px;
+	height:26px;
+	overflow:hidden;
+	font-size:1px;
+	line-height:1px;
+	text-indent:-9999px;
+	background-image:url(../../img/common/header_button_default.png);
+	background-position:right;
+	background-repeat:no-repeat;
+}
+.headerButton span.label{
+	display:block;
+	margin-top:3px;
+	min-width:80px;
+	outline:none;
+	text-align:center;
+	font-size:90%;
+	font-weight:bold;
+	color: #ffffff;
+}
+.headerButton a{
+	text-decoration:none;
+}
+.headerButton a:hover span{
+	color:#ffffff;
+}
+.headerButton a:hover span.left{
+	background-image:url(../../img/common/header_button_over.png);
+}
+.headerButton a:hover span.center{
+	background-image:url(../../img/common/header_button_over_base.png);
+}
+.headerButton a:hover span.right{
+	background-image:url(../../img/common/header_button_over.png);
+}
+
+/* ----------------------------------------
+  ナビゲーションボタン
+---------------------------------------- */
+/*標準ナビゲーション*/
+.basicNavigation_current{
+	display:block;
+}
+.basicNavigation_current span.left{
+	float: left;
+	display:block;
+	width:20px;
+	height:25px;
+	background-image:url(../../img/common/header_basicnav_current.png);
+	background-position:left;
+	background-repeat:no-repeat;
+}
+.basicNavigation_current span.center{
+	float: left;
+	display:block;
+	width:auto;
+	height:25px;
+	background-image:url(../../img/common/header_nav_current_base.png);
+	background-position:-10px;
+	background-repeat:repeat-x;
+}
+.basicNavigation_current span.right{
+	float: left;
+	display:block;
+	width:20px;
+	height:25px;
+	background-image:url(../../img/common/header_basicnav_current.png);
+	background-position:right;
+	background-repeat:no-repeat;
+}
+.basicNavigation_current span.label{
+	display:block;
+	width:auto;
+	margin-top:3px;
+	text-decoration:none;
+	outline:none;
+	font-weight:bold;
+	color: #ffffff;
+}
+
+.basicNavigation{
+	display:block;
+}
+.basicNavigation span.left{
+	float: left;
+	display:block;
+	width:20px;
+	height:25px;
+	overflow:hidden;
+	font-size:1px;
+	line-height:1px;
+	text-indent:-9999px;
+	background-image:url(../../img/common/header_basicnav_default.png);
+	background-position:left;
+	background-repeat:no-repeat;
+}
+.basicNavigation span.center{
+	float: left;
+	display:block;
+	width:auto;
+	height:25px;
+	background-image:url(../../img/common/header_nav_default_base.png);
+	background-position:-10px;
+	background-repeat:repeat-x;
+}
+.basicNavigation span.right{
+	float: left;
+	display:block;
+	width:20px;
+	height:25px;
+	overflow:hidden;
+	font-size:1px;
+	line-height:1px;
+	text-indent:-9999px;
+	background-image:url(../../img/common/header_basicnav_default.png);
+	background-position:right;
+	background-repeat:no-repeat;
+}
+.basicNavigation span.label{
+	display:block;
+	margin-top:3px;
+	min-width:80px;
+	outline:none;
+	text-align:center;
+	text-decoration:underline;
+	font-weight:bold;
+	color: #ffffff;
+}
+.basicNavigation a{
+	text-decoration:underline;
+}
+.basicNavigation a:hover span{
+	color:#ffffff;
+}
+.basicNavigation a:hover span.left{
+	background-image:url(../../img/common/header_basicnav_over.png);
+}
+.basicNavigation a:hover span.center{
+	background-image:url(../../img/common/header_nav_over_base.png);
+}
+.basicNavigation a:hover span.right{
+	background-image:url(../../img/common/header_basicnav_over.png);
+}
+
+.basicNavigation_current{
+	display:block;
+}
+.basicNavigation_current span.left{
+	float: left;
+	display:block;
+	width:20px;
+	height:25px;
+	background-image:url(../../img/common/header_basicnav_current.png);
+	background-position:left;
+	background-repeat:no-repeat;
+}
+.basicNavigation_current span.center{
+	float: left;
+	display:block;
+	width:auto;
+	height:25px;
+	background-image:url(../../img/common/header_nav_current_base.png);
+	background-position:-10px;
+	background-repeat:repeat-x;
+}
+.basicNavigation_current span.right{
+	float: left;
+	display:block;
+	width:20px;
+	height:25px;
+	background-image:url(../../img/common/header_basicnav_current.png);
+	background-position:right;
+	background-repeat:no-repeat;
+}
+.basicNavigation_current span.label{
+	display:block;
+	width:auto;
+	margin-top:3px;
+	text-decoration:none;
+	outline:none;
+	font-weight:bold;
+	color: #ffffff;
+}
+
+/*ドリルダウンナビゲーション*/
+.drillDownNavigation_current{
+	display:block;
+}
+.drillDownNavigation_current span.left{
+	float: left;
+	display:block;
+	width:20px;
+	height:25px;
+	background-image:url(../../img/common/header_drilldownnav_current.png);
+	background-position:left;
+	background-repeat:no-repeat;
+}
+.drillDownNavigation_current span.center{
+	float: left;
+	display:block;
+	width:auto;
+	height:25px;
+	background-image:url(../../img/common/header_nav_current_base.png);
+	background-position:-10px;
+	background-repeat:repeat-x;
+}
+.drillDownNavigation_current span.right{
+	float: left;
+	display:block;
+	width:20px;
+	height:25px;
+	background-image:url(../../img/common/header_drilldownnav_current.png);
+	background-position:right;
+	background-repeat:no-repeat;
+}
+.drillDownNavigation_current span.label{
+	display:block;
+	width:auto;
+	margin-top:3px;
+	text-decoration:none;
+	outline:none;
+	font-weight:bold;
+	color: #ffffff;
+}
+
+.drillDownNavigation{
+	display:block;
+}
+.drillDownNavigation span.left{
+	float: left;
+	display:block;
+	width:20px;
+	height:25px;
+	overflow:hidden;
+	font-size:1px;
+	line-height:1px;
+	text-indent:-9999px;
+	background-image:url(../../img/common/header_drilldownnav_default.png);
+	background-position:left;
+	background-repeat:no-repeat;
+}
+.drillDownNavigation span.center{
+	float: left;
+	display:block;
+	width:auto;
+	height:25px;
+	background-image:url(../../img/common/header_nav_default_base.png);
+	background-position:-10px;
+	background-repeat:repeat-x;
+}
+.drillDownNavigation span.right{
+	float: left;
+	display:block;
+	width:20px;
+	height:25px;
+	overflow:hidden;
+	font-size:1px;
+	line-height:1px;
+	text-indent:-9999px;
+	background-image:url(../../img/common/header_drilldownnav_default.png);
+	background-position:right;
+	background-repeat:no-repeat;
+}
+.drillDownNavigation span.label{
+	display:block;
+	margin-top:3px;
+	min-width:80px;
+	outline:none;
+	text-align:center;
+	text-decoration:underline;
+	font-weight:bold;
+	color: #ffffff;
+}
+.drillDownNavigation a{
+	text-decoration:underline;
+}
+.drillDownNavigation a:hover span{
+	color:#ffffff;
+}
+.drillDownNavigation a:hover span.left{
+	background-image:url(../../img/common/header_drilldownnav_over.png);
+}
+.drillDownNavigation a:hover span.center{
+	background-image:url(../../img/common/header_nav_over_base.png);
+}
+.drillDownNavigation a:hover span.right{
+	background-image:url(../../img/common/header_drilldownnav_over.png);
+}
+
+.drillDownNavigation_current{
+	display:block;
+}
+.drillDownNavigation_current span.left{
+	float: left;
+	display:block;
+	width:20px;
+	height:25px;
+	background-image:url(../../img/common/header_drilldownnav_current.png);
+	background-position:left;
+	background-repeat:no-repeat;
+}
+.drillDownNavigation_current span.center{
+	float: left;
+	display:block;
+	width:auto;
+	height:25px;
+	background-image:url(../../img/common/header_nav_current_base.png);
+	background-position:-10px;
+	background-repeat:repeat-x;
+}
+.drillDownNavigation_current span.right{
+	float: left;
+	display:block;
+	width:20px;
+	height:25px;
+	background-image:url(../../img/common/header_drilldownnav_current.png);
+	background-position:right;
+	background-repeat:no-repeat;
+}
+.drillDownNavigation_current span.label{
+	display:block;
+	width:auto;
+	margin-top:3px;
+	text-decoration:none;
+	outline:none;
+	font-weight:bold;
+	color: #ffffff;
+}
+

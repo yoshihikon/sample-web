@@ -1,0 +1,230 @@
+﻿@charset "utf-8";
+/* ------------------------------------------------------------
+ メインコンテンツ
+------------------------------------------------------------ */
+/* ----------------------------------------
+  メインコンテンツ
+---------------------------------------- */
+#mainContentsArea{
+	width:100%;
+	height:598px;
+	background-color:#ffffff;
+	background-image: url(../../img/common/maincontents_bg.png);
+	background-repeat:repeat-x;
+}
+#mainContents{
+	width:990px;
+	margin-top:12px;
+	margin-right:auto;
+	margin-left:auto;
+}
+#mainContentsArea .shadow{
+	position:absolute;
+	top:60px;
+	width:100%;
+	background-image:url(../../img/common/common_shadow.png);
+	background-repeat:repeat-x;
+}
+
+/* ----------------------------------------
+  ボタン
+---------------------------------------- */
+.basicButton{
+	display:block;
+	height:23px;
+}
+.basicButton span.left{
+	float: left;
+	display:block;
+	width:6px;
+	height:23px;
+	overflow:hidden;
+	font-size:1px;
+	line-height:1px;
+	text-indent:-9999px;
+	background-image:url(../../img/common/common_basicbutton_default.png);
+	background-position:left;
+	background-repeat:no-repeat;
+}
+.basicButton span.center{
+	float: left;
+	display:block;
+	width:auto;
+	height:23px;
+	background-image:url(../../img/common/common_button_default_base.png);
+	background-repeat:repeat-x;
+}
+.basicButton span.right{
+	float: left;
+	display:block;
+	width:6px;
+	height:23px;
+	overflow:hidden;
+	font-size:1px;
+	line-height:1px;
+	text-indent:-9999px;
+	background-image:url(../../img/common/common_basicbutton_default.png);
+	background-position:right;
+	background-repeat:no-repeat;
+}
+.basicButton span.label{
+	display:block;
+	margin-top:3px;
+	min-width:108px;
+	outline:none;
+	text-align:center;
+	text-decoration:none;
+	font-size:90%;
+	font-weight:bold;
+	color: #ffffff;
+}
+.basicButton a{
+	text-decoration:none;
+}
+.basicButton a:hover span{
+	color:#ffffff;
+}
+.basicButton a:hover span.left{
+	background-image:url(../../img/common/common_basicbutton_over.png);
+}
+.basicButton a:hover span.center{
+	background-image:url(../../img/common/common_button_over_base.png);
+}
+.basicButton a:hover span.right{
+	background-image:url(../../img/common/common_basicbutton_over.png);
+}
+
+
+/*大ボタン*/
+.bigButton{
+	display:block;
+	height:35px;
+}
+.bigButton span.left{
+	float: left;
+	display:block;
+	width:6px;
+	height:35px;
+	overflow:hidden;
+	font-size:1px;
+	line-height:1px;
+	text-indent:-9999px;
+	background-image:url(../../img/common/common_bigbutton_default.png);
+	background-position:left;
+	background-repeat:no-repeat;
+}
+.bigButton span.center{
+	float: left;
+	display:block;
+	width:auto;
+	height:35px;
+	background-image:url(../../img/common/common_bigbutton_default_base.png);
+	background-repeat:repeat-x;
+}
+.bigButton span.right{
+	float: left;
+	display:block;
+	width:6px;
+	height:35px;
+	overflow:hidden;
+	font-size:1px;
+	line-height:1px;
+	text-indent:-9999px;
+	background-image:url(../../img/common/common_bigbutton_default.png);
+	background-position:right;
+	background-repeat:no-repeat;
+}
+.bigButton span.label{
+	display:block;
+	min-width:108px;
+	padding-top:9px;
+	outline:none;
+	text-align:center;
+	text-decoration:none;
+	font-size:100%;
+	font-weight:bold;
+	color: #ffffff;
+}
+.bigButton a{
+	text-decoration:none;
+}
+.bigButton a:hover span{
+	color:#ffffff;
+}
+.bigButton a:hover span.left{
+	background-image:url(../../img/common/common_bigbutton_over.png);
+}
+.bigButton a:hover span.center{
+	background-image:url(../../img/common/common_bigbutton_over_base.png);
+}
+.bigButton a:hover span.right{
+	background-image:url(../../img/common/common_bigbutton_over.png);
+}
+
+
+/*ドリルダウンボタン*/
+.drillDownButton{
+	float:right;
+	display:block;
+}
+.drillDownButton span.left{
+	float: left;
+	display:block;
+	width:6px;
+	height:23px;
+	overflow:hidden;
+	font-size:1px;
+	line-height:1px;
+	text-indent:-9999px;
+	background-image:url(../../img/common/common_drilldownbutton_default.png);
+	background-position:left;
+	background-repeat:no-repeat;
+}
+.drillDownButton span.center{
+	float: left;
+	display:block;
+	width:auto;
+	height:23px;
+	background-image:url(../../img/common/common_button_default_base.png);
+	background-position:-10px;
+	background-repeat:repeat-x;
+}
+.drillDownButton span.right{
+	float: left;
+	display:block;
+	width:20px;
+	height:23px;
+	overflow:hidden;
+	font-size:1px;
+	line-height:1px;
+	text-indent:-9999px;
+	background-image:url(../../img/common/common_drilldownbutton_default.png);
+	background-position:right;
+	background-repeat:no-repeat;
+}
+.drillDownButton span.label{
+	display:block;
+	margin-top:3px;
+	min-width:80px;
+	outline:none;
+	text-align:center;
+	text-decoration:none;
+	font-size:90%;
+	font-weight:bold;
+	color: #ffffff;
+}
+.drillDownButton a{
+	text-decoration:none;
+}
+.drillDownButton a:hover span{
+	color:#ffffff;
+}
+.drillDownButton a:hover span.left{
+	background-image:url(../../img/common/common_drilldownbutton_over.png);
+}
+.drillDownButton a:hover span.center{
+	background-image:url(../../img/common/common_button_over_base.png);
+}
+.drillDownButton a:hover span.right{
+	background-image:url(../../img/common/common_drilldownbutton_over.png);
+}

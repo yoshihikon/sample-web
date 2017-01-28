@@ -1,0 +1,46 @@
+@charset "utf-8";
+/* ------------------------------------------------------------
+ common style
+------------------------------------------------------------ */
+/* ----------------------------------------
+  common
+---------------------------------------- */
+html {
+	height:100%;
+	font-size:14px;
+}
+body {
+	height:100%;
+	min-width:1000px;
+	margin: 0;
+	padding: 0;
+	font-family:"メイリオ";
+	background-color:#ffffff;
+	/*background-image:url(../../img/preview3.jpg);*/
+	background-repeat:no-repeat;
+}
+table {
+   	border-collapse: collapse;
+	border-spacing: 0;
+}
+td {
+    font-size:14px;
+}
+
+/* リンク色(通常) */
+a:link {
+	color:#000000;
+}
+/* リンク色(訪問済み) */
+a:visited {
+	color:#000000;
+}
+/* リンク色(マウスオーバー) */
+a:hover {
+	color:#a05100;
+}
+/* リンク色(アクティブ) */
+a:active {
+	color:#000000;
+}
+
