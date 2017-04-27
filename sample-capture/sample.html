@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Cache-Control" content="no-cache" />
+<meta http-equiv="Expires" content="Thu, 01 Dec 1994 16:00:00 GMT" />
+<title>capture sample</title>
+
+<script src="./libs/jquery/jquery-3.1.0.min.js" type="text/javascript"></script>
+<script src="./libs/html2canvas/html2canvas.js" type="text/javascript"></script>
+
+<script>
+$(function(){
+  
+  var isCaptureTargetDown = false;
+  
+  $('#captureTarget').on('mousedown', function(e){
+    
+    isCaptureTargetDown = true;
+    
+    $('#capturedBlock').css('top', e.clientY + 'px');
+    $('#capturedBlock').css('left', e.clientX + 'px');
+    
+    html2canvas($('#captureTarget'), {
+      onrendered: function(canvas) {
+        $('#capturedBlock').append(canvas);
+      }
+    });
+  });
+  
+  $('html').on('mouseup', function(e){
+    if(isCaptureTargetDown == true){
+      $('#capturedBlock').empty();
+      isCaptureTargetDown = false;
+    }
+  });
+  
+  $('html').on('mousemove', function(e){
+    if(isCaptureTargetDown == true){
+      $('#capturedBlock').css('top', e.clientY + 'px');
+      $('#capturedBlock').css('left', e.clientX + 'px');
+    }
+  });
+  
+});
+function capture(){
+  
+}
+</script>
+<style>
+#block{
+  box-sizing: border-box;
+  width: 100px;
+  height: 100px;
+  background-color: #efefef;
+  border: 2px solid #ff0000;
+  user-select: none;
+  cursor: pointer;
+}
+#capturedBlock{
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0.5;
+}
+</style>
+
+</head>
+
+<body>
+  <div id="captureTarget">
+    <div id="block">あいうえお</div>
+  </div>
+  <div id="capturedBlock"></div>
+</body>
+
+</html>

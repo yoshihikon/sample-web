@@ -97,7 +97,7 @@ body {
           if ( child instanceof THREE.Mesh ) {
               child.material.map = texture;
           }
-      } );
+      });
       
       //obj全体にアクセス
       object.position.x = 0;
@@ -157,6 +157,8 @@ body {
     if(cube != null){
       var cube2 = containerObject.getObjectByName("Cube2");
       cube2.rotation.y += 1*Math.PI/180;
+      
+      console.log(cube);
     }
     
     renderer.render( scene, camera );
