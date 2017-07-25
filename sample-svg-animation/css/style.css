@@ -1,0 +1,29 @@
+.svg-wrapper {
+  display: flex;
+  padding: 20px;
+}
+
+svg {
+  width: 400px;
+}
+
+#button-animation::before {
+  content: '開始';
+}
+
+#button-animation.on::before {
+  content: '停止';
+}
+
+/* 点滅 */
+.animation.on {
+  animation: blink 0.3s ease-in-out infinite alternate;
+}
+@keyframes blink {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
