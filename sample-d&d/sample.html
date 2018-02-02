@@ -67,7 +67,12 @@ function drop(event){
   reader.onloadend = function(){
     $(".filecontents").html("<p>ファイルの内容: "+reader.result+"</p>");
   };
-  reader.readAsDataURL( f );
+  
+  //dataで読む場合
+  //reader.readAsDataURL( f );
+  
+  //生のデータとして読む場合（SVGなど）
+  reader.readAsBinaryString( f );
   
 }
 
